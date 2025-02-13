@@ -1,28 +1,22 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = -300.0;
+const ACCEL = 4;
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+#vetor que recebe valores de x e y
+var input: Vector2;
 
+#resolve o problema de diagonal ser mais rápida
+func getInput():
+	input.x = Input.get_action_strength("left") - Input.get_action_strength("right");
+	input.y = Input.get_action_strength("up") - Input.get_action_strength("down");
+	return input.normalized();
 
 func _physics_process(delta):
-
+	var direction = getInput();
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var horizontal_direction = Input.get_axis("left", "right")
-	if horizontal_direction:
-		velocity.x = horizontal_direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	#lerp = interpolação linear, ele recebe argumentos de valor min/max e o quão suave é a transição entre valores
+	velocity = lerp(velocity, direction * SPEED, delta * ACCEL);
 	
-	var vertical_direction = Input.get_axis("up", "down")
-	if vertical_direction:
-		velocity.y = vertical_direction * SPEED
-	else:
-		velocity.y = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
+	move_and_slide();
