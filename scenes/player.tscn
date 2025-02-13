@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://bscfh0wybxa5r"]
 
-[ext_resource type="Script" path="res://playerScript.gd" id="1_c63rp"]
-[ext_resource type="Texture2D" uid="uid://djn4kibuqxr42" path="res://assets/gato.png" id="1_un1ui"]
+[ext_resource type="Script" path="res://scripts/playerScript.gd" id="1_2eo5p"]
+[ext_resource type="Texture2D" uid="uid://cksahv876l4sh" path="res://assets/green_gato.png" id="2_1kceg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qalit"]
 radius = 20.025
 
 [node name="player" type="CharacterBody2D"]
-script = ExtResource("1_c63rp")
+script = ExtResource("1_2eo5p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_un1ui")
+texture = ExtResource("2_1kceg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qalit")
