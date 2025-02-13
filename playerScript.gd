@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = -300.0;
+const SPEED = -200.0;
 const ACCEL = 4;
 
 #vetor que recebe valores de x e y
@@ -17,6 +17,6 @@ func _physics_process(delta):
 	var direction = getInput();
 	
 	#lerp = interpolação linear, ele recebe argumentos de valor min/max e o quão suave é a transição entre valores
-	velocity = lerp(velocity, direction * SPEED, delta * ACCEL);
+	velocity = getInput() * SPEED
 	
 	move_and_slide();
