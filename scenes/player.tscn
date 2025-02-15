@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bscfh0wybxa5r"]
+[gd_scene load_steps=5 format=3 uid="uid://bscfh0wybxa5r"]
 
 [ext_resource type="Script" path="res://scripts/playerScript.gd" id="1_2eo5p"]
 [ext_resource type="Texture2D" uid="uid://cksahv876l4sh" path="res://assets/green_gato.png" id="2_1kceg"]
+[ext_resource type="PackedScene" uid="uid://bb1lh4apq28pi" path="res://scenes/pistol.tscn" id="3_r4j78"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qalit"]
 radius = 20.025
@@ -15,3 +16,8 @@ texture = ExtResource("2_1kceg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qalit")
+
+[node name="gun_slot" type="Node2D" parent="."]
+
+[node name="pistol" parent="gun_slot" instance=ExtResource("3_r4j78")]
+position = Vector2(47, 0)

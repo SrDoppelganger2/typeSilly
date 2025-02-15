@@ -9,3 +9,4 @@ script = ExtResource("1_rqwr5")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_n1lfg")
+flip_h = true
