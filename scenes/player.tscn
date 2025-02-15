@@ -17,7 +17,8 @@ texture = ExtResource("2_1kceg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qalit")
 
-[node name="gun_slot" type="Node2D" parent="."]
+[node name="weaponSlot" type="Node2D" parent="."]
+rotation = 0.0283054
 
-[node name="pistol" parent="gun_slot" instance=ExtResource("3_r4j78")]
-position = Vector2(47, 0)
+[node name="pistol" parent="weaponSlot" instance=ExtResource("3_r4j78")]
+position = Vector2(36.9852, -1.04716)
