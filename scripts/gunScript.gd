@@ -3,6 +3,8 @@ extends Node2D
 var mousePos
 @onready var weaponSlot = $"..";
 @onready var weaponSprite = $Sprite2D;
+@export var Bullet: PackedScene;
+@onready var muzzle = $"../muzzle"
 
 func _ready():
 	pass # Replace with function body.
@@ -21,3 +23,15 @@ func _process(delta):
 		weaponSprite.flip_v = true;
 	else:
 		weaponSprite.flip_v = false;
+		
+	#lida com a logica da bala
+	if Input.is_action_just_pressed("shoot"):
+		#instancia a cena bullet
+		var bulletInstance = Bullet.instantiate();
+		#instancia bala no mundo para ela não mudar sua posição depois de atirada
+		get_tree().root.add_child(bulletInstance);
+		#faz a bala sair do ponto marcado na arma
+		bulletInstance.global_position = global_position;
+		bulletInstance.rotation = global_rotation;
+		
+		

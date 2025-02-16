@@ -22,3 +22,6 @@ rotation = 0.0283054
 
 [node name="pistol" parent="weaponSlot" instance=ExtResource("3_r4j78")]
 position = Vector2(36.9852, -1.04716)
+
+[node name="muzzle" type="Marker2D" parent="weaponSlot"]
+position = Vector2(50.9796, -1.44338)
