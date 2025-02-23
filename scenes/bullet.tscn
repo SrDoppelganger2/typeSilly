@@ -4,9 +4,10 @@
 [ext_resource type="Script" path="res://scripts/bulletScript.gd" id="1_u3q6b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lwbfk"]
-radius = 4.0
+radius = 5.0
 
 [node name="bullet" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_u3q6b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,4 +19,5 @@ shape = SubResource("CircleShape2D_lwbfk")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

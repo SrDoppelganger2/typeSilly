@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bamydnuay403x"]
+[gd_scene load_steps=3 format=3 uid="uid://bamydnuay403x"]
 
+[ext_resource type="PackedScene" uid="uid://0u18o22suwfk" path="res://scenes/enm.tscn" id="1_1bly2"]
 [ext_resource type="PackedScene" uid="uid://bscfh0wybxa5r" path="res://scenes/player.tscn" id="1_ckh02"]
 
 [node name="mainScene" type="Node2D"]
@@ -9,3 +10,18 @@ zoom = Vector2(2, 2)
 limit_smoothed = true
 
 [node name="player" parent="." instance=ExtResource("1_ckh02")]
+unique_name_in_owner = true
+
+[node name="ENM debug" type="Node" parent="."]
+
+[node name="ENM" parent="ENM debug" instance=ExtResource("1_1bly2")]
+position = Vector2(-306, 151)
+
+[node name="ENM2" parent="ENM debug" instance=ExtResource("1_1bly2")]
+position = Vector2(-301, -154)
+
+[node name="ENM3" parent="ENM debug" instance=ExtResource("1_1bly2")]
+position = Vector2(305, -170)
+
+[node name="ENM4" parent="ENM debug" instance=ExtResource("1_1bly2")]
+position = Vector2(303, 152)
