@@ -1,27 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://bamydnuay403x"]
+[gd_scene load_steps=4 format=3 uid="uid://bamydnuay403x"]
 
-[ext_resource type="PackedScene" uid="uid://0u18o22suwfk" path="res://scenes/enm.tscn" id="1_1bly2"]
+[ext_resource type="Script" path="res://scripts/gameScript.gd" id="1_c04gn"]
 [ext_resource type="PackedScene" uid="uid://bscfh0wybxa5r" path="res://scenes/player.tscn" id="1_ckh02"]
 
-[node name="mainScene" type="Node2D"]
+[sub_resource type="Curve2D" id="Curve2D_c2h3t"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -324, -208, 0, 0, 0, 0, 324, -207, 0, 0, 0, 0, 323, 203, 0, 0, 0, 0, -326, 206, 0, 0, 0, 0, -323, -207)
+}
+point_count = 5
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
-limit_smoothed = true
+[node name="mainScene" type="Node2D"]
+script = ExtResource("1_c04gn")
+
+[node name="ENM spawnrate" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
 
 [node name="player" parent="." instance=ExtResource("1_ckh02")]
 unique_name_in_owner = true
 
-[node name="ENM debug" type="Node" parent="."]
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(2, 2)
+limit_smoothed = true
+position_smoothing_speed = 1.0
 
-[node name="ENM" parent="ENM debug" instance=ExtResource("1_1bly2")]
-position = Vector2(-306, 151)
+[node name="Path2D" type="Path2D" parent="player"]
+curve = SubResource("Curve2D_c2h3t")
 
-[node name="ENM2" parent="ENM debug" instance=ExtResource("1_1bly2")]
-position = Vector2(-301, -154)
+[node name="PathFollow2D" type="PathFollow2D" parent="player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-324, -208)
+rotation = 0.00154321
 
-[node name="ENM3" parent="ENM debug" instance=ExtResource("1_1bly2")]
-position = Vector2(305, -170)
-
-[node name="ENM4" parent="ENM debug" instance=ExtResource("1_1bly2")]
-position = Vector2(303, 152)
+[connection signal="timeout" from="ENM spawnrate" to="." method="_on_enm_spawnrate_timeout"]

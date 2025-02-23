@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var player = %player;
+@onready var player = get_node("/root/mainScene/player");
 const SPEED = 75.0;
 var direction;
 
