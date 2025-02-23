@@ -28,12 +28,13 @@ autostart = true
 
 [node name="player" parent="." instance=ExtResource("1_ckh02")]
 unique_name_in_owner = true
-position = Vector2(385, 238)
+position = Vector2(584, 305)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(2, 2)
 limit_smoothed = true
-position_smoothing_speed = 1.0
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="Path2D" type="Path2D" parent="player"]
 curve = SubResource("Curve2D_c2h3t")
