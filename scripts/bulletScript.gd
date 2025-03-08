@@ -15,5 +15,5 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 #mata os inimigos e tira a bala da cena
 func _on_body_entered(body):
 	if body.is_in_group("mobs"):
-		body.queue_free();
+		body.takeDamage();
 	queue_free();
