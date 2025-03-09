@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 #TODO modularizar stats para simplificar processo de criar novos inimigos
 const SPEED = 75.0;
-var health = 3;
+var health = 1;
 
 var direction;
 

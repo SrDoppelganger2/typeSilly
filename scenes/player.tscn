@@ -1,8 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://bscfh0wybxa5r"]
+[gd_scene load_steps=9 format=3 uid="uid://bscfh0wybxa5r"]
 
 [ext_resource type="Script" path="res://scripts/playerScript.gd" id="1_2eo5p"]
 [ext_resource type="Texture2D" uid="uid://cksahv876l4sh" path="res://assets/green_gato.png" id="2_1kceg"]
+[ext_resource type="Texture2D" uid="uid://ciu3p4v632px1" path="res://assets/red_gato.png" id="3_mu634"]
 [ext_resource type="PackedScene" uid="uid://bb1lh4apq28pi" path="res://scenes/pistol.tscn" id="3_r4j78"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctnip"]
+atlas = ExtResource("2_1kceg")
+region = Rect2(0, 0, 420, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgut0"]
+atlas = ExtResource("3_mu634")
+region = Rect2(0, 0, 420, 420)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_77mb0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctnip")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgut0")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 1.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qalit"]
 radius = 20.025
@@ -10,9 +38,10 @@ radius = 20.025
 [node name="player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_2eo5p")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_1kceg")
+sprite_frames = SubResource("SpriteFrames_77mb0")
+animation = &"hurt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qalit")
@@ -25,3 +54,10 @@ position = Vector2(36.9852, -1.04716)
 
 [node name="muzzle" type="Marker2D" parent="weaponSlot"]
 position = Vector2(50.9796, -1.44338)
+
+[node name="fireRate" type="Timer" parent="weaponSlot"]
+wait_time = 0.3
+autostart = true
+
+[connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]
+[connection signal="timeout" from="weaponSlot/fireRate" to="weaponSlot/pistol" method="_on_fire_rate_timeout"]

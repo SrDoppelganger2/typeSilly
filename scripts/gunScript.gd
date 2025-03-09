@@ -4,7 +4,10 @@ var mousePos
 @onready var weaponSlot = $"..";
 @onready var weaponSprite = $Sprite2D;
 @export var Bullet: PackedScene;
-@onready var muzzle = $"../muzzle"
+@onready var muzzle = $"../muzzle";
+
+#TODO procurar um jeito melhor de fazer isso
+var canFire = false;
 
 func _ready():
 	pass # Replace with function body.
@@ -25,7 +28,7 @@ func _process(delta):
 		weaponSprite.flip_v = false;
 		
 	#lida com a logica da bala
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_pressed("shoot") and canFire:
 		#instancia a cena bullet
 		var bulletInstance = Bullet.instantiate();
 		#instancia bala no mundo para ela não mudar sua posição depois de atirada
@@ -34,4 +37,8 @@ func _process(delta):
 		bulletInstance.global_position = global_position;
 		bulletInstance.rotation = global_rotation;
 		
+		#Achar um jeito melhor de fazer isso
+		canFire = false
 		
+func _on_fire_rate_timeout():
+	canFire = true
