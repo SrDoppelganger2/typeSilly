@@ -1,7 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://bamydnuay403x"]
+[gd_scene load_steps=6 format=3 uid="uid://bamydnuay403x"]
 
 [ext_resource type="Script" path="res://scripts/gameScript.gd" id="1_c04gn"]
 [ext_resource type="PackedScene" uid="uid://bscfh0wybxa5r" path="res://scenes/player.tscn" id="1_ckh02"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wgrq"]
+bg_color = Color(0.309804, 0.282353, 0.278431, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7jbc"]
+bg_color = Color(0.972549, 0.298039, 0.376471, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="Curve2D" id="Curve2D_c2h3t"]
 _data = {
@@ -30,10 +44,22 @@ autostart = true
 unique_name_in_owner = true
 position = Vector2(584, 305)
 
+[node name="PlayerHealthBar" type="ProgressBar" parent="player"]
+unique_name_in_owner = true
+offset_left = -277.0
+offset_top = -155.0
+offset_right = -184.0
+offset_bottom = -135.0
+size_flags_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_6wgrq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_c7jbc")
+max_value = 5.0
+value = 5.0
+show_percentage = false
+
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(2, 2)
 limit_smoothed = true
-position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="Path2D" type="Path2D" parent="player"]

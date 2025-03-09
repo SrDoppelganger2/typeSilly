@@ -23,7 +23,8 @@ func getInput():
 
 func getHurt():
 	health -= 1;
-
+	
+	%PlayerHealthBar.value = health
 	sprite.play("hurt");
 	#TODO adicionar animação de morte e tela de gameover para chamar aqui
 	if health <= 0:
