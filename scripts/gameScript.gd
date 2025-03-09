@@ -1,6 +1,5 @@
 extends Node2D
 
-
 #futuramente implementar rand de inimigos
 func mobSpawner():
 	#define que os inimigos vão spawnar no path2D
@@ -16,3 +15,4 @@ func mobSpawner():
 	
 func _on_enm_spawnrate_timeout():
 	mobSpawner();
+	

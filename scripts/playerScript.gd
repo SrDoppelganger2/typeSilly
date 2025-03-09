@@ -1,12 +1,9 @@
 extends CharacterBody2D
 
-
 const SPEED = -200.0;
 const ACCEL = 4;
-
 #TODO modularizar esses stats para facilitar upgrades
 var health = 5;
-
 #vetor que recebe valores de x e y
 var input: Vector2;
 
