@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @onready var player = get_node("/root/mainScene/player");
+@onready var stats = $EnemyStats
 
-#TODO modularizar stats para simplificar processo de criar novos inimigos
 const SPEED = 75.0;
 var health = 1;
 
