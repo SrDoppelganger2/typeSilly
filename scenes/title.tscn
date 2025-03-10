@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpiho40hfslg1"]
+
+[ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/PixelOperator8.ttf" id="1_d6gkj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5a07x"]
+font_size = 28
+
+[node name="Title" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -153.5
+offset_right = 153.5
+offset_bottom = 32.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_d6gkj")
+text = "Type: Silly :3 "
+label_settings = SubResource("LabelSettings_5a07x")
