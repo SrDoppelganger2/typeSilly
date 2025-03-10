@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpiho40hfslg1"]
+[gd_scene load_steps=5 format=3 uid="uid://cpiho40hfslg1"]
 
 [ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/PixelOperator8.ttf" id="1_d6gkj"]
 [ext_resource type="Script" path="res://scripts/titleScript.gd" id="1_l144a"]
+[ext_resource type="Texture2D" uid="uid://v8dqsrfa6v6d" path="res://assets/gleebus.jpg" id="2_8wu5f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5a07x"]
 font_size = 64
@@ -10,6 +11,14 @@ font_size = 64
 script = ExtResource("1_l144a")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8wu5f")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 custom_minimum_size = Vector2(16, 16)
