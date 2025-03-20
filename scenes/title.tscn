@@ -59,6 +59,13 @@ theme_override_fonts/font = ExtResource("1_d6gkj")
 theme_override_font_sizes/font_size = 32
 text = "Jogar"
 
+[node name="Opções" type="Button" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d6gkj")
+theme_override_font_sizes/font_size = 32
+text = "Opções"
+
 [node name="Sair" type="Button" parent="CanvasLayer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
@@ -68,4 +75,5 @@ theme_override_font_sizes/font_size = 32
 text = "Sair"
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Opções" to="." method="_on_config_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
