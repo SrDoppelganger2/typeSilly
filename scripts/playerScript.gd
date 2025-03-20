@@ -20,12 +20,11 @@ func getInput():
 
 func getHurt():
 	health -= 1;
-	
 	%PlayerHealthBar.value = health
 	sprite.play("hurt");
 	#TODO adicionar animação de morte e tela de gameover para chamar aqui
 	if health <= 0:
-		get_tree().reload_current_scene();
+		Killzone.death();
 
 func _physics_process(delta):
 	var direction = getInput();
@@ -35,3 +34,4 @@ func _physics_process(delta):
 
 func _on_sprite_2d_animation_finished():
 	sprite.play("default");
+
