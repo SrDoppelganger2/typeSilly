@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bb1lh4apq28pi"]
 
 [ext_resource type="Texture2D" uid="uid://mo7p0h484ujh" path="res://assets/gun_placeHolder.png" id="1_n1lfg"]
-[ext_resource type="Script" path="res://scripts/gunScript.gd" id="1_rqwr5"]
+[ext_resource type="Script" uid="uid://dbppn05k38qrt" path="res://scripts/gunScript.gd" id="1_rqwr5"]
 [ext_resource type="PackedScene" uid="uid://oxk51k6t3r55" path="res://scenes/bullet.tscn" id="2_ohvrc"]
 
 [node name="pistol" type="Node2D"]

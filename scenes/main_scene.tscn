@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bamydnuay403x"]
 
-[ext_resource type="Script" path="res://scripts/gameScript.gd" id="1_c04gn"]
+[ext_resource type="Script" uid="uid://dm0aq2e2danl7" path="res://scripts/gameScript.gd" id="1_c04gn"]
 [ext_resource type="PackedScene" uid="uid://bscfh0wybxa5r" path="res://scenes/player.tscn" id="1_ckh02"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wgrq"]
