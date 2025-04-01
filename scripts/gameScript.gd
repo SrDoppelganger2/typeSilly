@@ -1,11 +1,11 @@
 extends Node2D
 
-@onready var pause_menu: Control = $pauseMenu;
+@onready var pause_menu: Control = $Menus/pauseMenu;
 var paused = false;
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
-		pass
+		pauseGame();
 
 func pauseGame():
 	if paused:
@@ -14,6 +14,8 @@ func pauseGame():
 	else:
 		pause_menu.show();
 		Engine.time_scale = 0;
+	
+	paused = !paused;
 
 #futuramente implementar rand de inimigos
 #func de spawnar inimigos
