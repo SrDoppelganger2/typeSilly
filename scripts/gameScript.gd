@@ -1,6 +1,17 @@
 extends Node2D
 
+@onready var pause_menu: Control = $pauseMenu;
+var paused = false;
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		pass
+
+func pauseGame():
+	pass
+
 #futuramente implementar rand de inimigos
+#func de spawnar inimigos
 func mobSpawner():
 	#define que os inimigos vão spawnar no path2D
 	var spawnPosition = %PathFollow2D.global_position;

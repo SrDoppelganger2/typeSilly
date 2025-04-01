@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bamydnuay403x"]
+[gd_scene load_steps=7 format=3 uid="uid://bamydnuay403x"]
 
 [ext_resource type="Script" uid="uid://dm0aq2e2danl7" path="res://scripts/gameScript.gd" id="1_c04gn"]
 [ext_resource type="PackedScene" uid="uid://bscfh0wybxa5r" path="res://scenes/player.tscn" id="1_ckh02"]
+[ext_resource type="PackedScene" uid="uid://cn3o5xk4yhdh6" path="res://scenes/pause_menu.tscn" id="2_7ykc4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wgrq"]
 bg_color = Color(0.309804, 0.282353, 0.278431, 1)
@@ -25,6 +26,9 @@ point_count = 5
 
 [node name="mainScene" type="Node2D"]
 script = ExtResource("1_c04gn")
+
+[node name="pauseMenu" parent="." instance=ExtResource("2_7ykc4")]
+visible = false
 
 [node name="placeholderBG" type="CanvasLayer" parent="."]
 layer = -10
