@@ -8,7 +8,12 @@ func _process(delta: float) -> void:
 		pass
 
 func pauseGame():
-	pass
+	if paused:
+		pause_menu.hide();
+		Engine.time_scale = 1;
+	else:
+		pause_menu.show();
+		Engine.time_scale = 0;
 
 #futuramente implementar rand de inimigos
 #func de spawnar inimigos
