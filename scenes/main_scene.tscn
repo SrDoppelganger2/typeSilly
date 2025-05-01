@@ -30,6 +30,7 @@ script = ExtResource("1_c04gn")
 [node name="Menus" type="CanvasLayer" parent="."]
 
 [node name="pauseMenu" parent="Menus" instance=ExtResource("2_7ykc4")]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

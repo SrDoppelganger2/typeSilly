@@ -34,4 +34,3 @@ func _physics_process(delta):
 
 func _on_sprite_2d_animation_finished():
 	sprite.play("default");
-
