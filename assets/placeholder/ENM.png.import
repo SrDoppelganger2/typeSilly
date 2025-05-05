@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyev8p0wqu2if"
-path="res://.godot/imported/ENM.png-215f8ca7bfdc8a23ba6f914ad08a50d8.ctex"
+path="res://.godot/imported/ENM.png-2671e0b4ce4d91ef620ed114571d9ff5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ENM.png"
-dest_files=["res://.godot/imported/ENM.png-215f8ca7bfdc8a23ba6f914ad08a50d8.ctex"]
+source_file="res://assets/placeholder/ENM.png"
+dest_files=["res://.godot/imported/ENM.png-2671e0b4ce4d91ef620ed114571d9ff5.ctex"]
 
 [params]
 

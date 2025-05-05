@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v8dqsrfa6v6d"
-path="res://.godot/imported/gleebus.jpg-ed77c6e6179e65272a2c464cae4bc3cb.ctex"
+uid="uid://mo7p0h484ujh"
+path="res://.godot/imported/gun_placeHolder.png-109a19887e9964dab593f9e9ce2f7cb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gleebus.jpg"
-dest_files=["res://.godot/imported/gleebus.jpg-ed77c6e6179e65272a2c464cae4bc3cb.ctex"]
+source_file="res://assets/placeholder/gun_placeHolder.png"
+dest_files=["res://.godot/imported/gun_placeHolder.png-109a19887e9964dab593f9e9ce2f7cb1.ctex"]
 
 [params]
 

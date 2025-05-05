@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cksahv876l4sh"
-path="res://.godot/imported/green_gato.png-f841424c726d130e13a4248376b5cb03.ctex"
+uid="uid://v8dqsrfa6v6d"
+path="res://.godot/imported/gleebus.jpg-6e31ad00fad5636fd14edf72543c6743.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/green_gato.png"
-dest_files=["res://.godot/imported/green_gato.png-f841424c726d130e13a4248376b5cb03.ctex"]
+source_file="res://assets/placeholder/gleebus.jpg"
+dest_files=["res://.godot/imported/gleebus.jpg-6e31ad00fad5636fd14edf72543c6743.ctex"]
 
 [params]
 

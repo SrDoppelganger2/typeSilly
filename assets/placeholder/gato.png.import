@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mo7p0h484ujh"
-path="res://.godot/imported/gun_placeHolder.png-e9f857961138c85c457ac0c68ef8c48e.ctex"
+uid="uid://djn4kibuqxr42"
+path="res://.godot/imported/gato.png-c1c74c0731e3b9b7dc15f1bec18a704e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gun_placeHolder.png"
-dest_files=["res://.godot/imported/gun_placeHolder.png-e9f857961138c85c457ac0c68ef8c48e.ctex"]
+source_file="res://assets/placeholder/gato.png"
+dest_files=["res://.godot/imported/gato.png-c1c74c0731e3b9b7dc15f1bec18a704e.ctex"]
 
 [params]
 

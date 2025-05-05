@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://ce67gdep4sgck"]
 
 [ext_resource type="Script" uid="uid://cv0sf50tea5j2" path="res://scripts/options.gd" id="1_wirlt"]
-[ext_resource type="Texture2D" uid="uid://v8dqsrfa6v6d" path="res://assets/gleebus.jpg" id="1_xlmin"]
-[ext_resource type="FontFile" uid="uid://dw4t8ftxbovhu" path="res://scenes/PixelOperator8.ttf" id="2_74nea"]
+[ext_resource type="Texture2D" uid="uid://v8dqsrfa6v6d" path="res://assets/placeholder/gleebus.jpg" id="1_xlmin"]
+[ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/fontes/PixelOperator8.ttf" id="3_2iy26"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_um220"]
 font_size = 64
@@ -25,7 +25,7 @@ offset_top = 49.0
 offset_right = -1.0
 offset_bottom = 84.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_74nea")
+theme_override_fonts/font = ExtResource("3_2iy26")
 theme_override_font_sizes/font_size = 32
 text = "Configurações"
 label_settings = SubResource("LabelSettings_um220")
@@ -48,7 +48,7 @@ grow_vertical = 0
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_74nea")
+theme_override_fonts/font = ExtResource("3_2iy26")
 theme_override_font_sizes/font_size = 32
 text = "Voltar
 "

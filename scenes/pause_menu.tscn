@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cn3o5xk4yhdh6"]
 
 [ext_resource type="Script" uid="uid://dpymcli5jkek5" path="res://scripts/pauseScript.gd" id="1_myx47"]
-[ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/PixelOperator8.ttf" id="1_n87rw"]
+[ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/fontes/PixelOperator8.ttf" id="1_n87rw"]
 
 [node name="pauseMenu" type="Control"]
 layout_mode = 3

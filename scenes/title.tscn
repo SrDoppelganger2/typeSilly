@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpiho40hfslg1"]
 
-[ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/PixelOperator8.ttf" id="1_d6gkj"]
+[ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/fontes/PixelOperator8.ttf" id="1_d6gkj"]
 [ext_resource type="Script" uid="uid://fa64rx5433jd" path="res://scripts/titleScript.gd" id="1_l144a"]
-[ext_resource type="Texture2D" uid="uid://v8dqsrfa6v6d" path="res://assets/gleebus.jpg" id="2_8wu5f"]
+[ext_resource type="Texture2D" uid="uid://v8dqsrfa6v6d" path="res://assets/placeholder/gleebus.jpg" id="2_8wu5f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5a07x"]
 font_size = 64
