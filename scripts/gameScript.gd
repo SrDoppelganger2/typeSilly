@@ -3,7 +3,7 @@ extends Node2D
 @onready var pause_menu: Control = $Menus/pauseMenu;
 var paused = false;
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		pauseGame();
 
@@ -16,6 +16,16 @@ func pauseGame():
 		Engine.time_scale = 0;
 	
 	paused = !paused;
+
+func _on_pause_retomar_jogo() -> void:
+	paused = true;
+	pauseGame();
+	print("jogo retomado!");
+
+func _on_pause_menu_sair_jogo() -> void:
+	paused = true;
+	pauseGame();
+	get_tree().change_scene_to_file("res://scenes/title.tscn");
 
 #futuramente implementar rand de inimigos
 #func de spawnar inimigos

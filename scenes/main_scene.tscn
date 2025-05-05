@@ -20,7 +20,7 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="Curve2D" id="Curve2D_c2h3t"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -324, -208, 0, 0, 0, 0, 324, -207, 0, 0, 0, 0, 323, 203, 0, 0, 0, 0, -326, 206, 0, 0, 0, 0, -323, -207)
+"points": PackedVector2Array(0, 0, 0, 0, -399, -236, 0, 0, 0, 0, 429.438, -235.087, 0, 0, 0, 0, 440.483, 207.826, 0, 0, 0, 0, -410.046, 215.132, 0, 0, 0, 0, -407.033, -194.905)
 }
 point_count = 5
 
@@ -64,10 +64,10 @@ position = Vector2(584, 305)
 
 [node name="PlayerHealthBar" type="ProgressBar" parent="player"]
 unique_name_in_owner = true
-offset_left = -277.0
-offset_top = -155.0
-offset_right = -184.0
-offset_bottom = -135.0
+offset_left = -369.0
+offset_top = -207.0
+offset_right = -276.0
+offset_bottom = -187.0
 size_flags_horizontal = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_6wgrq")
 theme_override_styles/fill = SubResource("StyleBoxFlat_c7jbc")
@@ -76,16 +76,20 @@ value = 5.0
 show_percentage = false
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
 limit_smoothed = true
 position_smoothing_speed = 10.0
 
 [node name="Path2D" type="Path2D" parent="player"]
+position = Vector2(1.34442, 22.4254)
+scale = Vector2(0.995851, 1.09502)
 curve = SubResource("Curve2D_c2h3t")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="player/Path2D"]
 unique_name_in_owner = true
-position = Vector2(-324, -208)
-rotation = 0.00154321
+position = Vector2(-399, -236)
+rotation = 0.00110207
 
+[connection signal="retomarJogo" from="Menus/pauseMenu" to="." method="_on_pause_retomar_jogo"]
+[connection signal="sairJogo" from="Menus/pauseMenu" to="." method="_on_pause_menu_sair_jogo"]
 [connection signal="timeout" from="ENM spawnrate" to="." method="_on_enm_spawnrate_timeout"]
