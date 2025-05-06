@@ -3,7 +3,7 @@ extends Area2D
 @export var exp = 1;
 
 var target = null;
-var speed = 0;
+var speed = -1;
 var sprite = preload("res://assets/placeholder/xp.png");
 
 @onready var sprite2D = $Sprite2D;
