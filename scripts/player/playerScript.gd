@@ -62,6 +62,7 @@ func calculateXP(exp_orb):
 		exp_level += 1;
 		exp = 0;
 		required_exp = calculateRequiredXP();
+		calculateXP(0);
 		print("seu nível agr é:", exp_level);
 	else:
 		exp += collected_exp;
