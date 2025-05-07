@@ -44,3 +44,7 @@ func mobSpawner():
 func _on_enm_spawnrate_timeout():
 	mobSpawner();
 	
+
+#MEME
+func _on_melan_timer_timeout() -> void:
+	%Melan.hide();

@@ -18,6 +18,7 @@ var collected_exp = 0
 
 func _ready():
 	sprite.play("default");
+	setExpBar(exp, calculateRequiredXP());
 
 #resolve o problema de diagonal ser mais rápida
 func getInput():
@@ -43,6 +44,10 @@ func _on_sprite_2d_animation_finished():
 	sprite.play("default");
 
 #lógica de níveis e exp
+
+@onready var ExpBar = get_node("%EXP");
+@onready var LvLabel = get_node("%Lv_label");
+
 func _on_grab_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("coletavel"):
 		area.target = self;
@@ -63,11 +68,15 @@ func calculateXP(exp_orb):
 		exp = 0;
 		required_exp = calculateRequiredXP();
 		calculateXP(0);
-		print("seu nível agr é:", exp_level);
+		#print("seu nível agr é:", exp_level);
+		%Melan.show();
+		%MelanTimer.start();
 	else:
 		exp += collected_exp;
 		collected_exp = 0;
-		print("exp:",exp,"/",required_exp);
+		#print("exp:",exp,"/",required_exp);
+	
+	setExpBar(exp, required_exp);
 
 func calculateRequiredXP():
 	var exp_cap = exp_level;
@@ -79,4 +88,7 @@ func calculateRequiredXP():
 		exp_cap = exp_level * 10;
 	
 	return exp_cap;
-	
+
+func setExpBar(set_value = 1, max_value = 100):
+	ExpBar.value = set_value;
+	ExpBar.max_value = max_value;
