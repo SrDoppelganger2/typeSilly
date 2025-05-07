@@ -9,6 +9,5 @@ func death():
 	$Timer.start();
 
 func _on_timer_timeout():
-	#mostrar menu de morte
 	get_tree().reload_current_scene()
 	Engine.time_scale = 1.0;
