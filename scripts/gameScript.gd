@@ -3,6 +3,8 @@ extends Node2D
 @onready var pause_menu: Control = $Menus/pauseMenu;
 var paused = false;
 
+@onready var mobsNode = get_tree().get_first_node_in_group("inimigos");
+
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		pauseGame();
@@ -10,10 +12,10 @@ func _process(_delta: float) -> void:
 func pauseGame():
 	if paused:
 		pause_menu.hide();
-		Engine.time_scale = 1;
+		get_tree().paused = false;
 	else:
 		pause_menu.show();
-		Engine.time_scale = 0;
+		get_tree().paused = true;
 	
 	paused = !paused;
 
@@ -37,7 +39,7 @@ func mobSpawner():
 	%PathFollow2D.progress_ratio = randf();
 	newMob.global_position = spawnPosition;
 	#Adiciona mob no jogo
-	add_child(newMob);
+	mobsNode.call_deferred("add_child",newMob);
 	
 	
 func _on_enm_spawnrate_timeout():

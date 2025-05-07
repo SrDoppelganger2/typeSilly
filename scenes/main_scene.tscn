@@ -33,6 +33,7 @@ _data = {
 point_count = 5
 
 [node name="mainScene" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_c04gn")
 
 [node name="Menus" type="CanvasLayer" parent="."]
@@ -137,11 +138,13 @@ size_flags_vertical = 4
 color = Color(0.85098, 0.929412, 0.572549, 1)
 
 [node name="ENM spawnrate" type="Timer" parent="."]
+process_mode = 1
 wait_time = 0.5
 autostart = true
 
 [node name="player" parent="." instance=ExtResource("1_ckh02")]
 unique_name_in_owner = true
+process_mode = 1
 position = Vector2(584, 305)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -160,6 +163,10 @@ position = Vector2(-399, -236)
 rotation = 0.00110207
 
 [node name="coletaveis" type="Node2D" parent="." groups=["coletavel"]]
+process_mode = 1
+
+[node name="inimigos" type="Node2D" parent="." groups=["inimigos"]]
+process_mode = 1
 
 [connection signal="timeout" from="Menus/GUI/EXP/Melan/MelanTimer" to="." method="_on_melan_timer_timeout"]
 [connection signal="retomarJogo" from="Menus/pauseMenu" to="." method="_on_pause_menu_retomar_jogo"]
