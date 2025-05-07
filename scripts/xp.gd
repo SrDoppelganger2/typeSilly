@@ -1,9 +1,9 @@
 extends Area2D
 
-@export var exp = 1;
+@export var value = 1;
 
 var target = null;
-var speed = -1;
+var speed = -2;
 var sprite = preload("res://assets/placeholder/xp.png");
 
 @onready var sprite2D = $Sprite2D;
@@ -13,7 +13,7 @@ func _physics_process(delta: float):
 	if target != null:
 		# faz o xp se mover em direção ao jogador
 		global_position = global_position.move_toward(target.global_position, speed);
-		speed += 4 * delta;
+		speed += 6 * delta;
 
 func collected():
 	#fazer da seguinte forma qquando adicionar so de coleta:
@@ -21,4 +21,4 @@ func collected():
 	#sprite.visible = false;
 	#queue free qnd o som parar de tocar
 	queue_free();
-	return exp;
+	return value;

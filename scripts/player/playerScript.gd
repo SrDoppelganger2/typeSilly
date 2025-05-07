@@ -68,6 +68,7 @@ func calculateXP(exp_orb):
 		exp = 0;
 		required_exp = calculateRequiredXP();
 		calculateXP(0);
+		LvLabel.text = str("Level: ",exp_level);
 		#print("seu nível agr é:", exp_level);
 		%Melan.show();
 		%MelanTimer.start();
