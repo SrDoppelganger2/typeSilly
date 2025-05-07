@@ -17,11 +17,10 @@ func pauseGame():
 	
 	paused = !paused;
 
-func _on_pause_retomar_jogo() -> void:
+func _on_pause_menu_retomar_jogo() -> void:
 	paused = true;
 	pauseGame();
-	print("jogo retomado!");
-
+	
 func _on_pause_menu_sair_jogo() -> void:
 	paused = true;
 	pauseGame();
@@ -44,7 +43,6 @@ func mobSpawner():
 func _on_enm_spawnrate_timeout():
 	mobSpawner();
 	
-
 #MEME
 func _on_melan_timer_timeout() -> void:
 	%Melan.hide();

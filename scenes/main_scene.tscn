@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dm0aq2e2danl7" path="res://scripts/gameScript.gd" id="1_c04gn"]
 [ext_resource type="PackedScene" uid="uid://bscfh0wybxa5r" path="res://scenes/player.tscn" id="1_ckh02"]
-[ext_resource type="PackedScene" uid="uid://cn3o5xk4yhdh6" path="res://scenes/pause_menu.tscn" id="2_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://cn3o5xk4yhdh6" path="res://scenes/Menus/pause_menu.tscn" id="2_7ykc4"]
 [ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/fontes/PixelOperator8.ttf" id="3_gubc5"]
 [ext_resource type="FontFile" uid="uid://dtwyw12fh2x1w" path="res://assets/fontes/PixelOperator8-Bold.ttf" id="4_rt2n2"]
 
@@ -37,19 +37,8 @@ script = ExtResource("1_c04gn")
 
 [node name="Menus" type="CanvasLayer" parent="."]
 
-[node name="pauseMenu" parent="Menus" instance=ExtResource("2_7ykc4")]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 446.0
-offset_top = 257.0
-offset_right = -706.0
-offset_bottom = -391.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="GUI" type="Control" parent="Menus"]
+z_index = -1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -122,6 +111,18 @@ text = "MELANTÁSTICO"
 unique_name_in_owner = true
 one_shot = true
 
+[node name="pauseMenu" parent="Menus" instance=ExtResource("2_7ykc4")]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 427.0
+offset_top = 242.0
+offset_right = -725.0
+offset_bottom = -406.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="placeholderBG" type="CanvasLayer" parent="."]
 layer = -10
 
@@ -160,7 +161,7 @@ rotation = 0.00110207
 
 [node name="coletaveis" type="Node2D" parent="." groups=["coletavel"]]
 
-[connection signal="retomarJogo" from="Menus/pauseMenu" to="." method="_on_pause_retomar_jogo"]
-[connection signal="sairJogo" from="Menus/pauseMenu" to="." method="_on_pause_menu_sair_jogo"]
 [connection signal="timeout" from="Menus/GUI/EXP/Melan/MelanTimer" to="." method="_on_melan_timer_timeout"]
+[connection signal="retomarJogo" from="Menus/pauseMenu" to="." method="_on_pause_menu_retomar_jogo"]
+[connection signal="sairJogo" from="Menus/pauseMenu" to="." method="_on_pause_menu_sair_jogo"]
 [connection signal="timeout" from="ENM spawnrate" to="." method="_on_enm_spawnrate_timeout"]
