@@ -105,3 +105,8 @@ func levelUp():
 	panelAnimation.tween_property(LvUpPanel,"position",Vector2(354,17),0.4).set_trans(panelAnimation.TRANS_QUINT).set_ease(panelAnimation.EASE_IN);
 	panelAnimation.play();
 	get_tree().paused = true;
+
+# lógica de upgrades
+
+func playerUpgrades(upgrade):
+	pass
