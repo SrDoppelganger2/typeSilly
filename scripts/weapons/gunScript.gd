@@ -14,7 +14,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	#pega as coordenadas do mouse na tela
 	mousePos = get_global_mouse_position();
 	weaponSlot.look_at(mousePos);

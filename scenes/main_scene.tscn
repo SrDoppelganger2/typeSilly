@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bamydnuay403x"]
+[gd_scene load_steps=13 format=3 uid="uid://bamydnuay403x"]
 
 [ext_resource type="Script" uid="uid://dm0aq2e2danl7" path="res://scripts/gameScript.gd" id="1_c04gn"]
 [ext_resource type="PackedScene" uid="uid://bscfh0wybxa5r" path="res://scenes/player.tscn" id="1_ckh02"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/fontes/PixelOperator8.ttf" id="3_gubc5"]
 [ext_resource type="PackedScene" uid="uid://1esufacl1srn" path="res://scenes/Menus/game_over_screen.tscn" id="4_c16ls"]
 [ext_resource type="FontFile" uid="uid://dtwyw12fh2x1w" path="res://assets/fontes/PixelOperator8-Bold.ttf" id="4_rt2n2"]
+[ext_resource type="PackedScene" uid="uid://bb54gkpeet7tf" path="res://scenes/killzone.tscn" id="7_c16ls"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wgrq"]
 bg_color = Color(0.309804, 0.282353, 0.278431, 1)
@@ -176,7 +177,11 @@ process_mode = 1
 [node name="inimigos" type="Node2D" parent="." groups=["inimigos"]]
 process_mode = 1
 
+[node name="Killzone" parent="." instance=ExtResource("7_c16ls")]
+visible = false
+
 [connection signal="timeout" from="Menus/GUI/EXP/Melan/MelanTimer" to="." method="_on_melan_timer_timeout"]
 [connection signal="retomarJogo" from="Menus/pauseMenu" to="." method="_on_pause_menu_retomar_jogo"]
 [connection signal="sairJogo" from="Menus/pauseMenu" to="." method="_on_pause_menu_sair_jogo"]
 [connection signal="timeout" from="ENM spawnrate" to="." method="_on_enm_spawnrate_timeout"]
+[connection signal="gameOverScreen" from="Killzone" to="player" method="_on_killzone_game_over_screen"]

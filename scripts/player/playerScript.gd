@@ -34,9 +34,9 @@ func getHurt():
 	if health <= 0:
 		Killzone.death();
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = getInput();
-	velocity = getInput() * SPEED
+	velocity = direction * SPEED;
 	
 	move_and_slide();
 
@@ -93,3 +93,7 @@ func calculateRequiredXP():
 func setExpBar(set_value = 1, max_value = 100):
 	ExpBar.value = set_value;
 	ExpBar.max_value = max_value;
+
+
+func _on_killzone_game_over_screen() -> void:
+	print("signal recivied")

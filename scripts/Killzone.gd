@@ -1,5 +1,7 @@
 extends Area2D
 
+signal gameOverScreen;
+
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		body.getHurt();
@@ -9,5 +11,6 @@ func death():
 	$Timer.start();
 
 func _on_timer_timeout():
-	get_tree().reload_current_scene()
 	Engine.time_scale = 1.0;
+	get_tree().change_scene_to_file("res://scenes/Menus/game_over_screen.tscn");
+	

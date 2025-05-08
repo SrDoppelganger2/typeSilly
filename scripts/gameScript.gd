@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var pause_menu: Control = $Menus/pauseMenu;
+@onready var gameOverScreen: Control = $Menus/GameOverScreen;
 var paused = false;
 
 @onready var mobsNode = get_tree().get_first_node_in_group("inimigos");
@@ -41,10 +42,9 @@ func mobSpawner():
 	#Adiciona mob no jogo
 	mobsNode.call_deferred("add_child",newMob);
 	
-	
 func _on_enm_spawnrate_timeout():
 	mobSpawner();
-	
+
 #MEME
 func _on_melan_timer_timeout() -> void:
 	%Melan.hide();
