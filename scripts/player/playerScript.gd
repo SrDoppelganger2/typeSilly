@@ -51,6 +51,8 @@ func _on_sprite_2d_animation_finished():
 @onready var LvUpPanel = get_node("%LevelUp");
 @onready var upgradeOptions = get_node("%UpgradeOptions");
 
+@onready var upgradeCards = preload("res://scenes/upgrade_option.tscn");
+
 func _on_grab_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("coletavel"):
 		area.target = self;
@@ -70,7 +72,6 @@ func calculateXP(exp_orb):
 		exp_level += 1;
 		exp = 0;
 		required_exp = calculateRequiredXP();
-		calculateXP(0);
 		#print("seu nível agr é:", exp_level);
 		%Melan.show();
 		%MelanTimer.start();
@@ -104,9 +105,24 @@ func levelUp():
 	var panelAnimation = LvUpPanel.create_tween();
 	panelAnimation.tween_property(LvUpPanel,"position",Vector2(354,17),0.4).set_trans(panelAnimation.TRANS_QUINT).set_ease(panelAnimation.EASE_IN);
 	panelAnimation.play();
+	
+	var options = 0
+	var maxOptions = 3
+	
+	while options < maxOptions:
+		var card = upgradeCards.instantiate();
+		upgradeOptions.add_child(card);
+		options += 1;
+	
 	get_tree().paused = true;
 
 # lógica de upgrades
-
 func playerUpgrades(upgrade):
-	pass
+	var optionChildren = upgradeOptions.get_children();
+	for c in optionChildren:
+		c.queue_free()
+	
+	LvUpPanel.hide();
+	LvUpPanel.position = Vector2(929.0,17.0);
+	get_tree().paused = false;
+	calculateXP(0);

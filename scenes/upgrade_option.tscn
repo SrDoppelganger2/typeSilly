@@ -43,6 +43,7 @@ text = "Melância :3"
 vertical_alignment = 1
 
 [node name="descriptionLabel" type="Label" parent="."]
+layout_mode = 0
 offset_left = 79.0
 offset_top = 45.0
 offset_right = 444.0
@@ -58,11 +59,15 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.998
 anchor_right = 0.998
-offset_left = -93.1
+offset_left = -99.1
 offset_top = 8.0
-offset_right = 0.899994
+offset_right = -5.10001
 offset_bottom = 31.0
 theme_override_colors/font_color = Color(0.66596, 0.000312272, 0.660596, 1)
 theme_override_fonts/font = ExtResource("2_8wlfj")
 text = "Lv.9999"
+horizontal_alignment = 2
 vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
