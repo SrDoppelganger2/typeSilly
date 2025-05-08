@@ -47,6 +47,7 @@ func _on_sprite_2d_animation_finished():
 
 @onready var ExpBar = get_node("%EXP");
 @onready var LvLabel = get_node("%Lv_label");
+@onready var XpLabel = get_node("%xpLabel");
 
 @onready var LvUpPanel = get_node("%LevelUp");
 @onready var upgradeOptions = get_node("%UpgradeOptions");
@@ -80,7 +81,8 @@ func calculateXP(exp_orb):
 		exp += collected_exp;
 		collected_exp = 0;
 		#print("exp:",exp,"/",required_exp);
-	
+		
+	XpLabel.text = str(exp,"/", calculateRequiredXP());
 	setExpBar(exp, required_exp);
 
 func calculateRequiredXP():
@@ -97,6 +99,7 @@ func calculateRequiredXP():
 func setExpBar(set_value = 1, max_value = 100):
 	ExpBar.value = set_value;
 	ExpBar.max_value = max_value;
+	
 
 func levelUp():
 	LvLabel.text = str("Level: ",exp_level);
