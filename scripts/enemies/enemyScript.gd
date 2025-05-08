@@ -32,7 +32,7 @@ func death():
 	
 
 func _physics_process(delta):
-	var direction = getPlayerPosition();
+	direction = getPlayerPosition();
 	velocity = direction * speed * delta;
 	
 	move_and_slide();

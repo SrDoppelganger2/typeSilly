@@ -48,6 +48,9 @@ func _on_sprite_2d_animation_finished():
 @onready var ExpBar = get_node("%EXP");
 @onready var LvLabel = get_node("%Lv_label");
 
+@onready var LvUpPanel = get_node("%LevelUp");
+@onready var upgradeOptions = get_node("%UpgradeOptions");
+
 func _on_grab_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("coletavel"):
 		area.target = self;
@@ -68,10 +71,10 @@ func calculateXP(exp_orb):
 		exp = 0;
 		required_exp = calculateRequiredXP();
 		calculateXP(0);
-		LvLabel.text = str("Level: ",exp_level);
 		#print("seu nível agr é:", exp_level);
 		%Melan.show();
 		%MelanTimer.start();
+		levelUp();
 	else:
 		exp += collected_exp;
 		collected_exp = 0;
@@ -94,6 +97,11 @@ func setExpBar(set_value = 1, max_value = 100):
 	ExpBar.value = set_value;
 	ExpBar.max_value = max_value;
 
-
-func _on_killzone_game_over_screen() -> void:
-	print("signal recivied")
+func levelUp():
+	LvLabel.text = str("Level: ",exp_level);
+	#animação de mostra o menu de upgrades
+	LvUpPanel.show();
+	var panelAnimation = LvUpPanel.create_tween();
+	panelAnimation.tween_property(LvUpPanel,"position",Vector2(354,17),0.4).set_trans(panelAnimation.TRANS_QUINT).set_ease(panelAnimation.EASE_IN);
+	panelAnimation.play();
+	get_tree().paused = true;
