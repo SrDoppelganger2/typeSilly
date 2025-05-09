@@ -123,6 +123,7 @@ func levelUp():
 	
 	while options < maxOptions:
 		var card = upgradeCards.instantiate();
+		card.upgrade = getRandomUpgrade();
 		upgradeOptions.add_child(card);
 		options += 1;
 	
@@ -132,8 +133,9 @@ func levelUp():
 func playerUpgrades(upgrade):
 	var optionChildren = upgradeOptions.get_children();
 	for c in optionChildren:
-		c.queue_free()
-	
+		c.queue_free();
+	availableUpgrades.clear();
+	collectedUpgrades.append(upgrade);
 	LvUpPanel.hide();
 	LvUpPanel.position = Vector2(929.0,17.0);
 	get_tree().paused = false;
@@ -141,6 +143,7 @@ func playerUpgrades(upgrade):
 
 func getRandomUpgrade():
 	var db = [];
+	
 	for i in UpgradeDb.UPGRADES:
 		if i in collectedUpgrades: #ignora upgrades já escolhidos
 			pass
@@ -154,3 +157,12 @@ func getRandomUpgrade():
 					pass
 				else:
 					db.append(i);
+		else:
+			db.append(i);
+		
+	if db.size() > 0:
+		var randomUpgrade = db.pick_random();
+		availableUpgrades.append(randomUpgrade);
+		return randomUpgrade;
+	else:
+		return null;
