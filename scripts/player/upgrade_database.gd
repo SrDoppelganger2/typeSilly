@@ -12,17 +12,41 @@ const UPGRADES ={
 		"prerequisite":[], 
 		"type":"item"
 	},
-	"mais_velocidade":{
+	"agilidade1":{
 		"icon": ICON_PATH + "suika.png",
-		"displayName":"mais velocidade",
-		"details":"adiciona +5% velocidade de movimento",
-		"level":"Level: n/a",
+		"displayName":"Agilidade",
+		"details":"adiciona +10% velocidade de movimento",
+		"level":"Level: 1",
 		"prerequisite":[], 
+		"type":"item"
+	},
+	"agilidade2":{
+		"icon": ICON_PATH + "suika.png",
+		"displayName":"Agilidade",
+		"details":"adiciona +20% velocidade de movimento",
+		"level":"Level: 2",
+		"prerequisite":["agilidade1"], 
+		"type":"item"
+	},
+	"agilidade3":{
+		"icon": ICON_PATH + "suika.png",
+		"displayName":"Agilidade",
+		"details":"adiciona +30% velocidade de movimento",
+		"level":"Level: 3",
+		"prerequisite":["agilidade2"], 
+		"type":"item"
+	},
+	"agilidade4":{
+		"icon": ICON_PATH + "suika.png",
+		"displayName":"Agilidade",
+		"details":"adiciona +40% velocidade de movimento",
+		"level":"Level: 4",
+		"prerequisite":["agilidade3"], 
 		"type":"item"
 	},
 	"berserk1":{
 		"icon": ICON_PATH + "suika.png",
-		"displayName":"mais dano",
+		"displayName":"Berserk Pack",
 		"details":"dê mais dano",
 		"level":"Level: 1",
 		"prerequisite":[], 
@@ -30,7 +54,7 @@ const UPGRADES ={
 	},
 	"berserk2":{
 		"icon": ICON_PATH + "suika.png",
-		"displayName":"mais dano",
+		"displayName":"Berserk Pack",
 		"details":"dê mais dano",
 		"level":"Level: 2",
 		"prerequisite":["berserk1"], 
@@ -38,7 +62,7 @@ const UPGRADES ={
 	},
 	"berserk3":{
 		"icon": ICON_PATH + "suika.png",
-		"displayName":"mais dano",
+		"displayName":"Berserk Pack",
 		"details":"dê mais dano",
 		"level":"Level: 3",
 		"prerequisite":["berserk2"], 
@@ -46,7 +70,7 @@ const UPGRADES ={
 	},
 	"berserk4":{
 		"icon": ICON_PATH + "suika.png",
-		"displayName":"mais dano",
+		"displayName":"Berserk Pack",
 		"details":"dê mais dano",
 		"level":"Level: 4",
 		"prerequisite":["berserk3"], 
@@ -54,7 +78,7 @@ const UPGRADES ={
 	},
 	"berserk5":{
 		"icon": ICON_PATH + "suika.png",
-		"displayName":"mais dano",
+		"displayName":"Berserk Pack",
 		"details":"dê mais dano",
 		"level":"Level: 5",
 		"prerequisite":["berserk4"], 
