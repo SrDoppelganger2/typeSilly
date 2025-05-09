@@ -24,7 +24,7 @@ var availableUpgrades = [];
 #atributos para upgrade
 var armor = 0;
 var speedUpgrade = 0;
-var attackCooldown = 0;
+var attackCooldown = 0.3;
 var damage = 1;
 
 signal setDamage;
@@ -222,3 +222,9 @@ func applyUpgrade(upgrade):
 		"berserk3":
 			damage += 1;
 			setDamage.emit(damage);
+		"destreza1":
+			attackCooldown = 0.3;
+			%fireRate.set_wait_time(attackCooldown);
+		"destreza2":
+			attackCooldown = 0.2;
+			%fireRate.set_wait_time(attackCooldown);

@@ -68,6 +68,22 @@ const UPGRADES ={
 		"prerequisite":["berserk2"], 
 		"type":"item"
 	},
+	"destreza1":{
+		"icon": ICON_PATH + "suika.png",
+		"displayName":"destreza",
+		"details":"diminui um pouco o cooldown da sua arma",
+		"level":"Level: 1",
+		"prerequisite":[], 
+		"type":"item"
+	},
+	"destreza2":{
+		"icon": ICON_PATH + "suika.png",
+		"displayName":"destreza",
+		"details":"diminui muito o cooldown da sua arma",
+		"level":"Level: 2",
+		"prerequisite":["destreza1"], 
+		"type":"item"
+	},
 	"vitalidade1":{
 		"icon": ICON_PATH + "suika.png",
 		"displayName":"Vitalidade",
@@ -95,7 +111,7 @@ const UPGRADES ={
 	"vitalidade4":{
 		"icon": ICON_PATH + "suika.png",
 		"displayName":"Vitalidade",
-		"details":"adiciona mais 4 ssspontos de vida máxima",
+		"details":"adiciona mais 4 pontos de vida máxima",
 		"level":"Level: 3",
 		"prerequisite":["vitalidade3"], 
 		"type":"item"

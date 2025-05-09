@@ -63,7 +63,8 @@ position = Vector2(36.9852, -1.04716)
 position = Vector2(50.9796, -1.44338)
 
 [node name="fireRate" type="Timer" parent="weaponSlot"]
-wait_time = 0.3
+unique_name_in_owner = true
+wait_time = 0.4
 autostart = true
 
 [node name="areas" type="Node2D" parent="."]
