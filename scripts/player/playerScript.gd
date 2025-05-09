@@ -16,6 +16,16 @@ var exp_level = 1
 #XP que acabou de ser coletado
 var collected_exp = 0
 
+#var de upgrades
+var collectedUpgrades = [];
+var availableUpgrades = [];
+
+#atributos para upgrade
+var armor = 0;
+var speed = 0;
+var attackCooldown = 0;
+var bulletSize = 0;
+
 func _ready():
 	sprite.play("default");
 	setExpBar(exp, calculateRequiredXP());
@@ -44,7 +54,6 @@ func _on_sprite_2d_animation_finished():
 	sprite.play("default");
 
 #lógica de níveis e exp
-
 @onready var ExpBar = get_node("%EXP");
 @onready var LvLabel = get_node("%Lv_label");
 @onready var XpLabel = get_node("%xpLabel");
@@ -129,3 +138,19 @@ func playerUpgrades(upgrade):
 	LvUpPanel.position = Vector2(929.0,17.0);
 	get_tree().paused = false;
 	calculateXP(0);
+
+func getRandomUpgrade():
+	var db = [];
+	for i in UpgradeDb.UPGRADES:
+		if i in collectedUpgrades: #ignora upgrades já escolhidos
+			pass
+		elif i in availableUpgrades: #se o upgrade já for uma opção, ignora
+			pass
+		#elif UpgradeDb.UPGRADES[i]["type"] == "item": 
+			#pass
+		elif UpgradeDb.UPGRADES[i]["prerequisite"].size() > 0: #checa prerequisitos
+			for n in UpgradeDb.UPGRADES[i]["prerequisite"]:
+				if not n in collectedUpgrades:
+					pass
+				else:
+					db.append(i);

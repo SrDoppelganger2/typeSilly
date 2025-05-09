@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxw5qw0kq2x6i"
-path="res://.godot/imported/suika.png-3ad9b0d381376800e988250bc114c668.ctex"
+path="res://.godot/imported/suika.png-dd583cbbe2f6f4ee5616a8761f0466cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholder/suika.png"
-dest_files=["res://.godot/imported/suika.png-3ad9b0d381376800e988250bc114c668.ctex"]
+source_file="res://assets/itens/upgrades/suika.png"
+dest_files=["res://.godot/imported/suika.png-dd583cbbe2f6f4ee5616a8761f0466cd.ctex"]
 
 [params]
 

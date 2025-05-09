@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://mgx17iuhknnx"]
 
 [ext_resource type="Script" uid="uid://bj63el5xvidj5" path="res://scripts/player/upgrade_option.gd" id="1_4b4l4"]
-[ext_resource type="Texture2D" uid="uid://dxw5qw0kq2x6i" path="res://assets/placeholder/suika.png" id="1_4noig"]
+[ext_resource type="Texture2D" uid="uid://dxw5qw0kq2x6i" path="res://assets/itens/upgrades/suika.png" id="1_4noig"]
 [ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/fontes/PixelOperator8.ttf" id="2_8wlfj"]
 
 [node name="upgradeOption" type="ColorRect"]
