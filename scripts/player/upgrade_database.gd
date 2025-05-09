@@ -103,7 +103,7 @@ const UPGRADES ={
 	"vitalidade3":{
 		"icon": ICON_PATH + "suika.png",
 		"displayName":"Vitalidade",
-		"details":"adiciona mais 4 pontos de vida máxima",
+		"details":"adiciona mais 3 pontos de vida máxima",
 		"level":"Level: 3",
 		"prerequisite":["vitalidade2"], 
 		"type":"item"
@@ -111,7 +111,7 @@ const UPGRADES ={
 	"vitalidade4":{
 		"icon": ICON_PATH + "suika.png",
 		"displayName":"Vitalidade",
-		"details":"adiciona mais 5 pontos de vida máxima",
+		"details":"adiciona mais 4 ssspontos de vida máxima",
 		"level":"Level: 3",
 		"prerequisite":["vitalidade3"], 
 		"type":"item"

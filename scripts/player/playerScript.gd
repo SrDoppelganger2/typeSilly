@@ -6,6 +6,7 @@ const SPEED = -200.0;
 const ACCEL = 4;
 #TODO modularizar esses stats para facilitar upgrades (talvez não seja necessário)
 var health = 5;
+var maxHealth = 5;
 #vetor que recebe valores de x e y
 var input: Vector2;
 
@@ -22,7 +23,7 @@ var availableUpgrades = [];
 
 #atributos para upgrade
 var armor = 0;
-var speed = 0;
+var speedUpgrade = 0;
 var attackCooldown = 0;
 var bulletSize = 0;
 
@@ -38,15 +39,20 @@ func getInput():
 
 func getHurt():
 	health -= 1;
-	%PlayerHealthBar.value = health
+	updateHealthBar();
 	sprite.play("hurt");
 	#TODO adicionar animação de morte e tela de gameover para chamar aqui
 	if health <= 0:
 		Killzone.death();
 
+func updateHealthBar():
+	%PlayerHealthBar.max_value = maxHealth;
+	%PlayerHealthBar.value = health;
+	%healthLabel.text = str(health,"/",maxHealth);
+
 func _physics_process(_delta):
 	var direction = getInput();
-	velocity = direction * SPEED;
+	velocity = direction * (SPEED + speedUpgrade);
 	
 	move_and_slide();
 
@@ -131,6 +137,9 @@ func levelUp():
 
 # lógica de upgrades
 func playerUpgrades(upgrade):
+	
+	applyUpgrade(upgrade);
+	
 	var optionChildren = upgradeOptions.get_children();
 	for c in optionChildren:
 		c.queue_free();
@@ -166,3 +175,38 @@ func getRandomUpgrade():
 		return randomUpgrade;
 	else:
 		return null;
+
+func applyUpgrade(upgrade):
+	match upgrade:
+		"melancia":
+			health += 2
+			health = clamp(health, 0, maxHealth);
+			updateHealthBar();
+		"vitalidade1":
+			maxHealth += 1
+			health += 1
+			health = clamp(health, 0, maxHealth);
+			updateHealthBar();
+		"vitalidade2":
+			maxHealth += 2
+			health += 2
+			health = clamp(health, 0, maxHealth);
+			updateHealthBar();
+		"vitalidade3":
+			maxHealth += 3
+			health += 3
+			health = clamp(health, 0, maxHealth);
+			updateHealthBar();
+		"vitalidade4":
+			maxHealth += 4
+			health += 4
+			health = clamp(health, 0, maxHealth);
+			updateHealthBar();
+		"agilidade1":
+			speedUpgrade += SPEED * 0.1;
+		"agilidade2":
+			speedUpgrade += SPEED * 0.2;
+		"agilidade3":
+			speedUpgrade += SPEED * 0.3;
+		"agilidade3":
+			speedUpgrade += SPEED * 0.4;
