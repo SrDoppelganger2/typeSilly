@@ -47,7 +47,7 @@ const UPGRADES ={
 	"berserk1":{
 		"icon": ICON_PATH + "suika.png",
 		"displayName":"Berserk Pack",
-		"details":"dê mais dano",
+		"details":"aumenta o dano dos seus ataques",
 		"level":"Level: 1",
 		"prerequisite":[], 
 		"type":"item"
@@ -55,7 +55,7 @@ const UPGRADES ={
 	"berserk2":{
 		"icon": ICON_PATH + "suika.png",
 		"displayName":"Berserk Pack",
-		"details":"dê mais dano",
+		"details":"aumenta o dano dos seus ataques",
 		"level":"Level: 2",
 		"prerequisite":["berserk1"], 
 		"type":"item"
@@ -63,25 +63,9 @@ const UPGRADES ={
 	"berserk3":{
 		"icon": ICON_PATH + "suika.png",
 		"displayName":"Berserk Pack",
-		"details":"dê mais dano",
+		"details":"aumenta o dano dos seus ataques",
 		"level":"Level: 3",
 		"prerequisite":["berserk2"], 
-		"type":"item"
-	},
-	"berserk4":{
-		"icon": ICON_PATH + "suika.png",
-		"displayName":"Berserk Pack",
-		"details":"dê mais dano",
-		"level":"Level: 4",
-		"prerequisite":["berserk3"], 
-		"type":"item"
-	},
-	"berserk5":{
-		"icon": ICON_PATH + "suika.png",
-		"displayName":"Berserk Pack",
-		"details":"dê mais dano",
-		"level":"Level: 5",
-		"prerequisite":["berserk4"], 
 		"type":"item"
 	},
 	"vitalidade1":{

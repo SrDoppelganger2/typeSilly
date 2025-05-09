@@ -2,6 +2,11 @@ extends Node2D
 
 const SPEED = 500.0;
 
+var bulletDamage = 1;
+
+func setDamage(damage):
+	bulletDamage = damage;
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#move a bala na direção que a arma está apontando
@@ -15,5 +20,5 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 #mata os inimigos e tira a bala da cena
 func _on_body_entered(body):
 	if body.is_in_group("mobs"):
-		body.takeDamage();
+		body.takeDamage(bulletDamage);
 	queue_free();

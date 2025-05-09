@@ -25,11 +25,14 @@ var availableUpgrades = [];
 var armor = 0;
 var speedUpgrade = 0;
 var attackCooldown = 0;
-var bulletSize = 0;
+var damage = 1;
+
+signal setDamage;
 
 func _ready():
 	sprite.play("default");
 	setExpBar(exp, calculateRequiredXP());
+	
 
 #resolve o problema de diagonal ser mais rápida
 func getInput():
@@ -210,3 +213,12 @@ func applyUpgrade(upgrade):
 			speedUpgrade += SPEED * 0.3;
 		"agilidade3":
 			speedUpgrade += SPEED * 0.4;
+		"berserk1":
+			damage += 1;
+			setDamage.emit(damage);
+		"berserk2":
+			damage += 1;
+			setDamage.emit(damage);
+		"berserk3":
+			damage += 1;
+			setDamage.emit(damage);

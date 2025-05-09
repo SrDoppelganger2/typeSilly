@@ -7,15 +7,15 @@ var direction;
 
 #atributos que podem mudar para cada tipo de inimigo
 @export var speed = 75.0;
-@export var health = 1;
+@export var health = 3;
 @export var exp = 1;
 @onready var exp_orb = preload("res://scenes/xp.tscn");
 
 func getPlayerPosition():
 	return player.position - position
 
-func takeDamage():
-	health -= 1;
+func takeDamage(damage):
+	health -= damage;
 	
 	if health <= 0:
 		death();
