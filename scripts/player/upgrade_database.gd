@@ -116,4 +116,28 @@ const UPGRADES ={
 		"prerequisite":["vitalidade3"], 
 		"type":"item"
 	},
+	"mais_balas1":{
+		"icon": ICON_PATH + "suika.png",
+		"displayName":"mais balas",
+		"details":"adiciona mais balas para sua shotgun",
+		"level":"Level: 1",
+		"prerequisite":[],
+		"type":"item"
+	},
+	"mais_balas2":{
+		"icon": ICON_PATH + "suika.png",
+		"displayName":"mais balas",
+		"details":"adicona mais balas para sua shotgun",
+		"level":"Level: 2",
+		"prerequisite":["mais_balas1"], 
+		"type":"item"
+	},
+	"mais_balas3":{
+		"icon": ICON_PATH + "suika.png",
+		"displayName":"mais balas",
+		"details":"adicona mais balas para sua shotgun",
+		"level":"Level: 3",
+		"prerequisite":["mais_balas2"], 
+		"type":"item"
+	},
 }

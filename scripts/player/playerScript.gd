@@ -29,6 +29,7 @@ var damage = 1;
 
 signal setDamage;
 signal setChosenWeapon;
+signal setPellets;
 
 func _ready():
 	sprite.play("default");
@@ -163,7 +164,10 @@ func getRandomUpgrade():
 			pass
 		elif i in availableUpgrades: #se o upgrade já for uma opção, ignora
 			pass
+		#TODO fazer um método de filtragem mais eficiente
 		elif UpgradeDb.UPGRADES[i]["displayName"] == "agilidade" and gun == "chaingun": 
+			pass
+		elif UpgradeDb.UPGRADES[i]["displayName"] == "mais balas" and gun != "shotgun":
 			pass
 		elif UpgradeDb.UPGRADES[i]["prerequisite"].size() > 0: #checa prerequisitos
 			for n in UpgradeDb.UPGRADES[i]["prerequisite"]:
@@ -224,12 +228,19 @@ func applyUpgrade(upgrade):
 		"berserk3":
 			damage += 1;
 			setDamage.emit(damage);
+		#ajeitar esses daqui
 		"destreza1":
 			attackCooldown -= attackCooldown / 4;
 			%fireRate.set_wait_time(attackCooldown);
 		"destreza2":
 			attackCooldown -= attackCooldown / 3;
 			%fireRate.set_wait_time(attackCooldown);
+		"mais_balas1":
+			setPellets.emit(4);
+		"mais_balas2":
+			setPellets.emit(5);
+		"mais_balas3":
+			setPellets.emit(6);
 
 #DEBUG
 func _on_main_scene_set_weapon(weapon) -> void:

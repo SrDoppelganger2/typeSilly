@@ -4,13 +4,21 @@ const SPEED = 500.0;
 
 var bulletDamage = 1;
 
+#var weapon = "shotgun";
+#
+#var spread = randf_range(-0.5,0.5)
+#var direction = transform.x.rotated(spread)
+
 func setDamage(damage):
 	bulletDamage = damage;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#move a bala na direção que a arma está apontando
-	position += transform.x * SPEED * delta;
+	#if weapon == "shotgun":
+		#position += direction * SPEED * delta;
+	#else:
+		position += transform.x * SPEED * delta;
 
 #remove a bala quando ela sai da camera
 #talvez precise retrabalhar essa lógica a depender do design do jogo

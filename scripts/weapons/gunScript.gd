@@ -6,6 +6,9 @@ var mousePos
 var bullet = preload("res://scenes/bullet.tscn");
 @onready var muzzle = $"../muzzle";
 
+#var de shotgun
+var pellets = 3;
+
 #var para serem modificadas
 var chosenWeapon;
 var damage = 1;
@@ -79,16 +82,26 @@ func pistolLogic():
 	bulletInstance.global_position = global_position;
 	bulletInstance.rotation = global_rotation;
 
+func _on_player_set_pellets(quantity) -> void:
+	pellets = quantity;
+
 func shotgunLogic():
+	var arc = 30.0;
 	damage = 3
 	%fireRate.set_wait_time(1.0);
 	
-	#TODO loop para instanciar multiplas balas, fazer balas surgirem de um ponto e se espalharem aleatoriamente
-	var bulletInstance = bullet.instantiate();
-	bulletInstance.setDamage(damage)
-	get_tree().root.add_child(bulletInstance);
-	bulletInstance.global_position = global_position;
-	bulletInstance.rotation = global_rotation
+	for i in pellets:
+		var bulletInstance = bullet.instantiate();
+		bulletInstance.setDamage(damage)
+		get_tree().root.add_child(bulletInstance);
+		bulletInstance.global_position = global_position;
+		
+		#lógica de spread de balas
+		var arc_rad = deg_to_rad(arc);
+		var increment = arc_rad / (pellets - 1)
+		bulletInstance.rotation = (
+			global_rotation + increment * i - arc_rad / 2
+		);
 
 func chaingunLogic():
 	%fireRate.set_wait_time(0.1);
