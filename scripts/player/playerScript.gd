@@ -22,17 +22,18 @@ var collectedUpgrades = [];
 var availableUpgrades = [];
 
 #atributos para upgrade
-var armor = 0;
+var gun = "chaingun";
 var speedUpgrade = 0;
 var attackCooldown = 0.3;
 var damage = 1;
 
 signal setDamage;
+signal setChosenWeapon;
 
 func _ready():
 	sprite.play("default");
 	setExpBar(exp, calculateRequiredXP());
-	
+	setChosenWeapon.emit(gun);
 
 #resolve o problema de diagonal ser mais rápida
 func getInput():
@@ -161,8 +162,8 @@ func getRandomUpgrade():
 			pass
 		elif i in availableUpgrades: #se o upgrade já for uma opção, ignora
 			pass
-		#elif UpgradeDb.UPGRADES[i]["type"] == "item": 
-			#pass
+		elif UpgradeDb.UPGRADES[i]["displayName"] == "agilidade" and gun == "chaingun": 
+			pass
 		elif UpgradeDb.UPGRADES[i]["prerequisite"].size() > 0: #checa prerequisitos
 			for n in UpgradeDb.UPGRADES[i]["prerequisite"]:
 				if not n in collectedUpgrades:

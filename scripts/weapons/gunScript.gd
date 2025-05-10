@@ -7,7 +7,7 @@ var bullet = preload("res://scenes/bullet.tscn");
 @onready var muzzle = $"../muzzle";
 
 #var para serem modificadas
-var chosenWeapon = "pistol";
+var chosenWeapon;
 var damage = 1;
 var cooldown;
 
@@ -15,7 +15,15 @@ var cooldown;
 #TODO procurar um jeito melhor de fazer isso
 var canFire = false;
 
-func _ready() -> void:
+func _on_player_set_chosen_weapon(weapon) -> void:
+	if weapon == null:
+		chosenWeapon = "pistol"
+	else:
+		chosenWeapon = weapon;
+	
+	loadWeaponSprites();
+
+func loadWeaponSprites():
 	match chosenWeapon:
 		"pistol":
 			weaponSprite.texture = load("res://assets/placeholder/gun_placeHolder.png");
@@ -28,7 +36,7 @@ func _ready() -> void:
 			weaponSprite.flip_h = false;
 			weaponSprite.scale = Vector2(1, 1);
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(_delta):
 	#pega as coordenadas do mouse na tela
 	mousePos = get_global_mouse_position();
@@ -44,15 +52,13 @@ func _process(_delta):
 		
 	#lida com a logica da bala
 	if Input.is_action_pressed("shoot") and canFire:
-		#instancia a cena bullet
-		var bulletInstance = bullet.instantiate();
-		bulletInstance.setDamage(damage)
-		#instancia bala no mundo para ela não mudar sua posição depois de atirada
-		get_tree().root.add_child(bulletInstance);
-		#faz a bala sair do ponto marcado na arma
-		bulletInstance.global_position = global_position;
-		bulletInstance.rotation = global_rotation;
-		
+		match chosenWeapon:
+			"pistol":
+				pistolLogic();
+			"shotgun":
+				shotgunLogic();
+			"chaingun":
+				chaingunLogic();
 		#Achar um jeito melhor de fazer isso
 		canFire = false
 		
@@ -62,3 +68,25 @@ func _on_fire_rate_timeout():
 
 func _on_player_set_damage(dmg) -> void:
 	damage = dmg;
+
+func pistolLogic():
+	#instancia a cena bullet
+	var bulletInstance = bullet.instantiate();
+	bulletInstance.setDamage(damage)
+	#instancia bala no mundo para ela não mudar sua posição depois de atirada
+	get_tree().root.add_child(bulletInstance);
+	#faz a bala sair do ponto marcado na arma
+	bulletInstance.global_position = global_position;
+	bulletInstance.rotation = global_rotation;
+
+func shotgunLogic():
+	pass
+
+func chaingunLogic():
+	%fireRate.set_wait_time(0.1);
+	
+	var bulletInstance = bullet.instantiate();
+	bulletInstance.setDamage(damage)
+	get_tree().root.add_child(bulletInstance);
+	bulletInstance.global_position = global_position;
+	bulletInstance.rotation = global_rotation;
