@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://bryud8od03ixl"]
+
+[ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/fontes/PixelOperator8.ttf" id="1_q0fhy"]
+[ext_resource type="Texture2D" uid="uid://wkfuji7s4jux" path="res://assets/placeholder/pistol_icon.png" id="2_ahqwe"]
+[ext_resource type="Texture2D" uid="uid://d3yob1uo2ip3u" path="res://assets/placeholder/shotgun_placeHolder.png" id="2_cao45"]
+[ext_resource type="Texture2D" uid="uid://tec6rtxx1fw3" path="res://assets/placeholder/machineGun_placeHolder.png" id="3_86if3"]
+
+[node name="selectionMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="voltar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 170.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("1_q0fhy")
+theme_override_font_sizes/font_size = 40
+text = "<<"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -243.0
+offset_top = -128.0
+offset_right = 13.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+alignment = 2
+
+[node name="pistol" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("2_ahqwe")
+flip_h = true
+
+[node name="shotgun" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("2_cao45")
+
+[node name="chaingun" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("3_86if3")
