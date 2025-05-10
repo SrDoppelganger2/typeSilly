@@ -22,7 +22,7 @@ var collectedUpgrades = [];
 var availableUpgrades = [];
 
 #atributos para upgrade
-var gun = "chaingun";
+var gun = "pistol";
 var speedUpgrade = 0;
 var attackCooldown = 0.3;
 var damage = 1;
@@ -55,6 +55,7 @@ func updateHealthBar():
 	%healthLabel.text = str(health,"/",maxHealth);
 
 func _physics_process(_delta):
+	setChosenWeapon.emit(gun);
 	var direction = getInput();
 	velocity = direction * (SPEED + speedUpgrade);
 	
@@ -224,8 +225,12 @@ func applyUpgrade(upgrade):
 			damage += 1;
 			setDamage.emit(damage);
 		"destreza1":
-			attackCooldown = 0.3;
+			attackCooldown -= attackCooldown / 4;
 			%fireRate.set_wait_time(attackCooldown);
 		"destreza2":
-			attackCooldown = 0.2;
+			attackCooldown -= attackCooldown / 3;
 			%fireRate.set_wait_time(attackCooldown);
+
+#DEBUG
+func _on_main_scene_set_weapon(weapon) -> void:
+	gun = weapon;

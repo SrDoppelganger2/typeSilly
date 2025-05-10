@@ -243,6 +243,7 @@ process_mode = 1
 [node name="inimigos" type="Node2D" parent="." groups=["inimigos"]]
 process_mode = 1
 
+[connection signal="setWeapon" from="." to="player" method="_on_main_scene_set_weapon"]
 [connection signal="timeout" from="Menus/GUI/EXP/Melan/MelanTimer" to="." method="_on_melan_timer_timeout"]
 [connection signal="retomarJogo" from="Menus/pauseMenu" to="." method="_on_pause_menu_retomar_jogo"]
 [connection signal="sairJogo" from="Menus/pauseMenu" to="." method="_on_pause_menu_sair_jogo"]

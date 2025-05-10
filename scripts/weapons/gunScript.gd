@@ -80,7 +80,15 @@ func pistolLogic():
 	bulletInstance.rotation = global_rotation;
 
 func shotgunLogic():
-	pass
+	damage = 3
+	%fireRate.set_wait_time(1.0);
+	
+	#TODO loop para instanciar multiplas balas, fazer balas surgirem de um ponto e se espalharem aleatoriamente
+	var bulletInstance = bullet.instantiate();
+	bulletInstance.setDamage(damage)
+	get_tree().root.add_child(bulletInstance);
+	bulletInstance.global_position = global_position;
+	bulletInstance.rotation = global_rotation
 
 func chaingunLogic():
 	%fireRate.set_wait_time(0.1);
@@ -90,3 +98,4 @@ func chaingunLogic():
 	get_tree().root.add_child(bulletInstance);
 	bulletInstance.global_position = global_position;
 	bulletInstance.rotation = global_rotation;
+	
