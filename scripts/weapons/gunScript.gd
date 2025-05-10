@@ -7,6 +7,7 @@ var bullet = preload("res://scenes/bullet.tscn");
 @onready var muzzle = $"../muzzle";
 
 #var para serem modificadas
+var chosenWeapon = "pistol";
 var damage = 1;
 var cooldown;
 
@@ -14,6 +15,18 @@ var cooldown;
 #TODO procurar um jeito melhor de fazer isso
 var canFire = false;
 
+func _ready() -> void:
+	match chosenWeapon:
+		"pistol":
+			weaponSprite.texture = load("res://assets/placeholder/gun_placeHolder.png");
+		"shotgun":
+			weaponSprite.texture = load("res://assets/placeholder/shotgun_placeHolder.png");
+			weaponSprite.flip_h = false;
+			weaponSprite.scale = Vector2(1, 1);
+		"chaingun":
+			weaponSprite.texture = load("res://assets/placeholder/machineGun_placeHolder.png");
+			weaponSprite.flip_h = false;
+			weaponSprite.scale = Vector2(1, 1);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
