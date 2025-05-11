@@ -29,7 +29,7 @@ func _on_player_set_chosen_weapon(weapon) -> void:
 func loadWeaponSprites():
 	match chosenWeapon:
 		"pistol":
-			weaponSprite.texture = load("res://assets/placeholder/gun_placeHolder.png");
+			weaponSprite.texture = load("res://assets/armas/pistola.png");
 		"shotgun":
 			weaponSprite.texture = load("res://assets/placeholder/shotgun_placeHolder.png");
 			weaponSprite.flip_h = false;
