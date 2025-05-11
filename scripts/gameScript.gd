@@ -7,20 +7,12 @@ var paused = false;
 @onready var mobsNode = get_tree().get_first_node_in_group("inimigos");
 @onready var player = get_tree().get_first_node_in_group("player");
 
-#debug
-signal setWeapon;
+
+
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		pauseGame();
-	
-	#SOMENTE PARA DEBUG, REMOVER DPS
-	if Input.is_action_just_pressed("1"):
-		setWeapon.emit("pistol");
-	if Input.is_action_just_pressed("2"):
-		setWeapon.emit("shotgun");
-	if Input.is_action_just_pressed("3"):
-		setWeapon.emit("chaingun");
 
 func pauseGame():
 	if paused:

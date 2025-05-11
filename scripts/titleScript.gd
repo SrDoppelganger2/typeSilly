@@ -3,7 +3,7 @@ extends Node2D
 
 
 func _on_jogar_pressed():
-	get_tree().change_scene_to_file("res://scenes/main_scene.tscn");
+	get_tree().change_scene_to_file("res://scenes/Menus/selection_menu.tscn");
 
 func _on_config_pressed():
 	get_tree().change_scene_to_file("res://scenes/Menus/options.tscn");

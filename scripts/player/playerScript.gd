@@ -22,7 +22,7 @@ var collectedUpgrades = [];
 var availableUpgrades = [];
 
 #atributos para upgrade
-var gun = "pistol";
+var gun;
 var speedUpgrade = 0;
 var attackCooldown = 0.3;
 var damage = 1;
@@ -32,6 +32,7 @@ signal setChosenWeapon;
 signal setPellets;
 
 func _ready():
+	gun = GlobalScript.getWeapon();
 	sprite.play("default");
 	setExpBar(exp, calculateRequiredXP());
 	setChosenWeapon.emit(gun);
@@ -165,7 +166,7 @@ func getRandomUpgrade():
 		elif i in availableUpgrades: #se o upgrade já for uma opção, ignora
 			pass
 		#TODO fazer um método de filtragem mais eficiente
-		elif UpgradeDb.UPGRADES[i]["displayName"] == "agilidade" and gun == "chaingun": 
+		elif UpgradeDb.UPGRADES[i]["displayName"] == "destrezaa" and gun == "chaingun": 
 			pass
 		elif UpgradeDb.UPGRADES[i]["displayName"] == "mais balas" and gun != "shotgun":
 			pass
@@ -241,7 +242,3 @@ func applyUpgrade(upgrade):
 			setPellets.emit(5);
 		"mais_balas3":
 			setPellets.emit(6);
-
-#DEBUG
-func _on_main_scene_set_weapon(weapon) -> void:
-	gun = weapon;

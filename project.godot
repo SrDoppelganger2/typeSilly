@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Killzone="*res://scenes/killzone.tscn"
 UpgradeDb="*res://scenes/upgrade_db.tscn"
+GlobalScript="*res://scripts/globalScript.gd"
 
 [display]
 
