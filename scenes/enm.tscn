@@ -1,8 +1,51 @@
-[gd_scene load_steps=6 format=3 uid="uid://0u18o22suwfk"]
+[gd_scene load_steps=12 format=3 uid="uid://0u18o22suwfk"]
 
-[ext_resource type="Texture2D" uid="uid://dyev8p0wqu2if" path="res://assets/placeholder/ENM.png" id="1_22qf5"]
 [ext_resource type="Script" uid="uid://cjtcnonbjrffr" path="res://scripts/enemies/enemyScript.gd" id="1_hwukv"]
+[ext_resource type="Texture2D" uid="uid://b16uyaf7k1n8g" path="res://assets/personagens/nectafiro-Sheet.png" id="2_fffdf"]
 [ext_resource type="PackedScene" uid="uid://bb54gkpeet7tf" path="res://scenes/killzone.tscn" id="3_na044"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6v8lg"]
+atlas = ExtResource("2_fffdf")
+region = Rect2(0, 0, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkj55"]
+atlas = ExtResource("2_fffdf")
+region = Rect2(35, 0, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bktlh"]
+atlas = ExtResource("2_fffdf")
+region = Rect2(70, 0, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2172b"]
+atlas = ExtResource("2_fffdf")
+region = Rect2(105, 0, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elnia"]
+atlas = ExtResource("2_fffdf")
+region = Rect2(140, 0, 35, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wmya"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6v8lg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkj55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bktlh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2172b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elnia")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uxmlw"]
 size = Vector2(24, 24)
@@ -15,9 +58,9 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_hwukv")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("1_22qf5")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8wmya")
+autoplay = "default"
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uxmlw")

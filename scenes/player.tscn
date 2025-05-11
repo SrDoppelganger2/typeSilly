@@ -68,7 +68,7 @@ script = ExtResource("1_2eo5p")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_77mb0")
-animation = &"hurt"
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qalit")
@@ -79,8 +79,9 @@ rotation = 0.0283054
 [node name="pistol" parent="weaponSlot" instance=ExtResource("3_r4j78")]
 position = Vector2(36.9852, -1.04716)
 
-[node name="muzzle" type="Marker2D" parent="weaponSlot"]
-position = Vector2(50.9796, -1.44338)
+[node name="muzzle" type="Marker2D" parent="weaponSlot/pistol"]
+position = Vector2(15.6822, -11.4484)
+scale = Vector2(1, 1)
 
 [node name="fireRate" type="Timer" parent="weaponSlot"]
 unique_name_in_owner = true
