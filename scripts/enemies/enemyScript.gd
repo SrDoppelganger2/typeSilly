@@ -54,6 +54,12 @@ func _physics_process(delta):
 	direction = getPlayerPosition();
 	velocity = direction * speed * delta;
 	
+	#vira o sprite do inimigo para a direção geral do jogador
+	if player.position > global_position:
+		sprites.scale.x = -1
+	else:
+		sprites.scale.x = 1
+	
 	move_and_slide();
 
 func nectafiro():

@@ -54,7 +54,6 @@ func _on_enm_spawnrate_timeout():
 
 func randomizeEnemy():
 	var prob = randi_range(0, 100)
-	print(prob);
 	
 	if prob <= 50:
 		return "nectafiro";

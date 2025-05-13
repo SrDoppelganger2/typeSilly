@@ -233,7 +233,7 @@ material = SubResource("ShaderMaterial_elnia")
 sprite_frames = SubResource("SpriteFrames_8wmya")
 animation = &"ligeirinho"
 autoplay = "nectafiro"
-frame_progress = 0.742428
+frame_progress = 0.413275
 
 [node name="flash" type="AnimationPlayer" parent="."]
 libraries = {
