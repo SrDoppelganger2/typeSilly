@@ -1,14 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://bryud8od03ixl"]
+[gd_scene load_steps=13 format=3 uid="uid://bryud8od03ixl"]
 
 [ext_resource type="Texture2D" uid="uid://cmtrkkha7iq8l" path="res://assets/personagens/melancio4real.png" id="1_q0fhy"]
 [ext_resource type="Script" uid="uid://vxd6r0flw4td" path="res://scripts/selectionScript.gd" id="1_vk7ax"]
 [ext_resource type="Texture2D" uid="uid://c2ex3sycpi0qo" path="res://assets/menus/selection window.png" id="2_ahqwe"]
+[ext_resource type="Shader" uid="uid://bjejnway6ugyq" path="res://assets/menus/shaders/BGscroll.gdshader" id="2_fcmd2"]
+[ext_resource type="Texture2D" uid="uid://b8fi8sbqfl6ea" path="res://assets/placeholder/checkedBG.png" id="2_qekaa"]
 [ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/fontes/PixelOperator8.ttf" id="3_cao45"]
 [ext_resource type="ButtonGroup" uid="uid://k0f3115k3c88" path="res://scenes/Menus/weaponSelectGroup.tres" id="5_i324u"]
 [ext_resource type="Texture2D" uid="uid://dbw026s1cq5r7" path="res://assets/armas/pistola.png" id="6_i324u"]
 [ext_resource type="Texture2D" uid="uid://cr6vev8ijkw0h" path="res://assets/placeholder/gato_icon.png" id="6_qs7hx"]
 [ext_resource type="Texture2D" uid="uid://cvnsi7iwpnlkg" path="res://assets/armas/musigun.png" id="8_qekaa"]
 [ext_resource type="Texture2D" uid="uid://cs0ix28fxg845" path="res://assets/armas/nyangun.png" id="9_fcmd2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_swu15"]
+shader = ExtResource("2_fcmd2")
 
 [node name="selectionMenu" type="Control"]
 layout_mode = 3
@@ -19,11 +24,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vk7ax")
 
+[node name="background" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_swu15")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qekaa")
+
 [node name="title" type="Label" parent="."]
 layout_mode = 0
 offset_top = 12.0
 offset_right = 1152.0
 offset_bottom = 77.0
+theme_override_colors/font_color = Color(0.402382, 0.000111423, 0.402379, 1)
 theme_override_fonts/font = ExtResource("3_cao45")
 theme_override_font_sizes/font_size = 48
 text = "Escolha seu arquivo Bélico"
