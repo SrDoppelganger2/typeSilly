@@ -10,13 +10,14 @@ var direction;
 @export var health = 1;
 @export var exp = 1;
 @onready var exp_orb = preload("res://scenes/xp.tscn");
+@onready var flash = $flash
 
 func getPlayerPosition():
 	return player.position - position
 
 func takeDamage(damage):
 	health -= damage;
-	
+	flash.play("hitFlash");
 	if health <= 0:
 		death();
 
