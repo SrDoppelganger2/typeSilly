@@ -77,11 +77,7 @@ shape = SubResource("CircleShape2D_qalit")
 rotation = 0.0283054
 
 [node name="pistol" parent="weaponSlot" instance=ExtResource("3_r4j78")]
-position = Vector2(36.9852, -1.04716)
-
-[node name="muzzle" type="Marker2D" parent="weaponSlot/pistol"]
-position = Vector2(15.6822, -11.4484)
-scale = Vector2(1, 1)
+position = Vector2(38.9561, -2.10336)
 
 [node name="fireRate" type="Timer" parent="weaponSlot"]
 unique_name_in_owner = true

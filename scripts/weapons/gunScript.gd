@@ -4,7 +4,7 @@ var mousePos
 @onready var weaponSlot = $"..";
 @onready var weaponSprite = $Sprite2D;
 var bullet = preload("res://scenes/bullet.tscn");
-@onready var muzzle = $"../muzzle";
+@onready var bulletOrigin:Node2D = %pistolBarrel;
 
 #var de shotgun
 var pellets = 3;
@@ -29,13 +29,16 @@ func _on_player_set_chosen_weapon(weapon) -> void:
 func loadWeaponSprites():
 	match chosenWeapon:
 		"pistol":
+			bulletOrigin = %pistolBarrel;
 			weaponSprite.texture = load("res://assets/armas/pistola.png");
 		"shotgun":
-			weaponSprite.texture = load("res://assets/placeholder/shotgun_placeHolder.png");
+			bulletOrigin = %shotgunBarrel;
+			weaponSprite.texture = load("res://assets/armas/musigun.png");
 			weaponSprite.flip_h = false;
 			weaponSprite.scale = Vector2(1, 1);
 		"chaingun":
-			weaponSprite.texture = load("res://assets/placeholder/machineGun_placeHolder.png");
+			bulletOrigin = %chaingunBarrel;
+			weaponSprite.texture = load("res://assets/armas/nyangun.png");
 			weaponSprite.flip_h = false;
 			weaponSprite.scale = Vector2(1, 1);
 
@@ -49,9 +52,9 @@ func _process(_delta):
 	#faz a arma só girar até 360 graus
 	var weaponRotation = wrap(weaponSlot.rotation_degrees, 0, 360);
 	if weaponRotation > 90 and weaponRotation < 270:
-		weaponSprite.flip_v = true;
+		scale.y = -1
 	else:
-		weaponSprite.flip_v = false;
+		scale.y = 1
 		
 	#lida com a logica da bala
 	if Input.is_action_pressed("shoot") and canFire:
@@ -79,7 +82,7 @@ func pistolLogic():
 	#instancia bala no mundo para ela não mudar sua posição depois de atirada
 	get_tree().root.add_child(bulletInstance);
 	#faz a bala sair do ponto marcado na arma
-	bulletInstance.global_position = global_position;
+	bulletInstance.global_position = bulletOrigin.global_position;
 	bulletInstance.rotation = global_rotation;
 
 func _on_player_set_pellets(quantity) -> void:
@@ -94,7 +97,7 @@ func shotgunLogic():
 		var bulletInstance = bullet.instantiate();
 		bulletInstance.setDamage(damage)
 		get_tree().root.add_child(bulletInstance);
-		bulletInstance.global_position = global_position;
+		bulletInstance.global_position = bulletOrigin.global_position;
 		
 		#lógica de spread de balas
 		var arc_rad = deg_to_rad(arc);
@@ -109,6 +112,6 @@ func chaingunLogic():
 	var bulletInstance = bullet.instantiate();
 	bulletInstance.setDamage(damage)
 	get_tree().root.add_child(bulletInstance);
-	bulletInstance.global_position = global_position;
+	bulletInstance.global_position = bulletOrigin.global_position;
 	bulletInstance.rotation = global_rotation;
 	

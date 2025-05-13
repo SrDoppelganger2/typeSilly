@@ -1,10 +1,23 @@
 [gd_scene load_steps=3 format=3 uid="uid://bb1lh4apq28pi"]
 
 [ext_resource type="Script" uid="uid://dbppn05k38qrt" path="res://scripts/weapons/gunScript.gd" id="1_rqwr5"]
-[ext_resource type="Texture2D" uid="uid://dbw026s1cq5r7" path="res://assets/armas/pistola.png" id="2_buff3"]
+[ext_resource type="Texture2D" uid="uid://cs0ix28fxg845" path="res://assets/armas/nyangun.png" id="2_buff3"]
 
 [node name="pistol" type="Node2D"]
 script = ExtResource("1_rqwr5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
 texture = ExtResource("2_buff3")
+
+[node name="pistolBarrel" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(15, -11)
+
+[node name="shotgunBarrel" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(14, -4)
+
+[node name="chaingunBarrel" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(16, -2)

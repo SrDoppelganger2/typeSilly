@@ -166,7 +166,7 @@ func getRandomUpgrade():
 		elif i in availableUpgrades: #se o upgrade já for uma opção, ignora
 			pass
 		#TODO fazer um método de filtragem mais eficiente
-		elif UpgradeDb.UPGRADES[i]["displayName"] == "destrezaa" and gun == "chaingun": 
+		elif UpgradeDb.UPGRADES[i]["displayName"] == "destreza" and gun == "chaingun": 
 			pass
 		elif UpgradeDb.UPGRADES[i]["displayName"] == "mais balas" and gun != "shotgun":
 			pass
