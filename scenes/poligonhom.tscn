@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqcoidvxyxmwa"]
+
+[ext_resource type="Texture2D" uid="uid://17s7gnuqqtl0" path="res://assets/personagens/poligonhom-Sheet.png" id="1_vn0sj"]
+[ext_resource type="PackedScene" uid="uid://bb54gkpeet7tf" path="res://scenes/killzone.tscn" id="2_iolld"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iolld"]
+atlas = ExtResource("1_vn0sj")
+region = Rect2(0, 0, 52, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x86bg"]
+atlas = ExtResource("1_vn0sj")
+region = Rect2(52, 0, 52, 52)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w5myv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iolld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x86bg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iolld"]
+size = Vector2(50, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x86bg"]
+size = Vector2(44, 40)
+
+[node name="Poligonhom" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w5myv")
+autoplay = "default"
+frame = 1
+frame_progress = 0.175377
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1.5)
+shape = SubResource("RectangleShape2D_iolld")
+
+[node name="Killzone" parent="." instance=ExtResource("2_iolld")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_x86bg")
+debug_color = Color(0.77042, 0.432236, 0.289962, 0.42)

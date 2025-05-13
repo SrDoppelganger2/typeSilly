@@ -38,8 +38,11 @@ func _on_pause_menu_sair_jogo() -> void:
 func mobSpawner():
 	#define que os inimigos vão spawnar no path2D
 	var spawnPosition = %PathFollow2D.global_position;
+	#define qual inimigo será spawnado
+	var enmType = randomizeEnemy();
 	#Instancia inimigos
 	var newMob = preload("res://scenes/enm.tscn").instantiate();
+	newMob.setType(enmType);
 	#randomiza posição no path2D
 	%PathFollow2D.progress_ratio = randf();
 	newMob.global_position = spawnPosition;
@@ -49,6 +52,20 @@ func mobSpawner():
 func _on_enm_spawnrate_timeout():
 	mobSpawner();
 
+func randomizeEnemy():
+	var prob = randi_range(0, 100)
+	print(prob);
+	
+	if prob <= 50:
+		return "nectafiro";
+	elif prob > 50 and prob <= 80:
+		return "ligeirinho";
+	elif prob > 80:
+		return "poligonhom"
+	else:
+		#para previnir erros, deixa o nectafiro como default 
+		return "nectafiro"
+		
 #MEME
 func _on_melan_timer_timeout() -> void:
 	%Melan.hide();

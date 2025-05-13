@@ -2,15 +2,31 @@ extends CharacterBody2D
 
 @onready var player = get_node("/root/mainScene/player");
 @onready var exp_base = get_tree().get_first_node_in_group("coletavel");
+@onready var exp_orb = preload("res://scenes/xp.tscn");
+@onready var sprites = $Sprite2D;
 
 var direction;
+var type;
+
 
 #atributos que podem mudar para cada tipo de inimigo
 @export var speed = 75.0;
 @export var health = 1;
 @export var exp = 1;
-@onready var exp_orb = preload("res://scenes/xp.tscn");
+@onready var hitbox = $hitbox
+@onready var hurtbox = $Killzone/killzoneCollision
 @onready var flash = $flash
+
+func _ready() -> void:
+	if type == "nectafiro":
+		nectafiro();
+	elif type == "ligeirinho":
+		ligeirinho();
+	elif type == "poligonhom":
+		poligonhom();
+	else:
+		#deixa o nectafiro como default
+		nectafiro();
 
 func getPlayerPosition():
 	return player.position - position
@@ -21,8 +37,10 @@ func takeDamage(damage):
 	if health <= 0:
 		death();
 
+func setType(newType):
+	type = newType;
+
 func death():
-	
 	#dropa exp
 	var exp_drop = exp_orb.instantiate();
 	exp_drop.global_position = global_position;
@@ -37,4 +55,38 @@ func _physics_process(delta):
 	velocity = direction * speed * delta;
 	
 	move_and_slide();
+
+func nectafiro():
+	sprites.play("nectafiro")
+	speed = 75.0;
+	health = 3;
+	exp = 1;
+
+func ligeirinho():
+	sprites.play("ligeirinho")
+	speed = 100.0;
+	health = 2;
+	exp = 2;
 	
+	#ajusta a hitbox
+	hitbox.scale = Vector2(1.2,1.6)
+	hitbox.position.x += 5
+	
+	#ajusta a hurtbox
+	hurtbox.scale = Vector2(1.2,1.6)
+	hurtbox.position.x += 5
+
+
+func poligonhom():
+	sprites.play("poligonhom")
+	speed = 50.0;
+	health = 8;
+	exp = 1;
+	
+	#ajusta a hitbox
+	hitbox.scale = Vector2(1.6,1.6)
+	hitbox.position.x += 3
+	
+	#ajusta a hurtbox
+	hurtbox.scale = Vector2(1.7,1.7)
+	hurtbox.position.x += 1
