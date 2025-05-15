@@ -70,7 +70,7 @@ func nectafiro():
 
 func ligeirinho():
 	sprites.play("ligeirinho")
-	speed = 100.0;
+	speed = 120.0;
 	health = 2;
 	exp = 2;
 	

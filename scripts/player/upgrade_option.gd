@@ -16,7 +16,7 @@ func _ready() -> void:
 	
 	#deixa um upgrade como default
 	if upgrade == null:
-		upgrade = "melancia";
+		upgrade = "jujuba_peixe";
 		
 	
 	nameLabel.text = UpgradeDb.UPGRADES[upgrade]["displayName"];

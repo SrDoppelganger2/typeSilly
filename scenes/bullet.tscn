@@ -1,7 +1,62 @@
-[gd_scene load_steps=4 format=3 uid="uid://oxk51k6t3r55"]
+[gd_scene load_steps=12 format=3 uid="uid://oxk51k6t3r55"]
 
-[ext_resource type="Texture2D" uid="uid://bxp0w85kv02s0" path="res://assets/placeholder/bullet.png" id="1_qqge0"]
 [ext_resource type="Script" uid="uid://d0s8y1wi4qial" path="res://scripts/weapons/bulletScript.gd" id="1_u3q6b"]
+[ext_resource type="Texture2D" uid="uid://dt1qbqahotfub" path="res://assets/itens/balas/semente-melangun.png" id="2_y25gk"]
+[ext_resource type="Texture2D" uid="uid://bf467t8mohhx0" path="res://assets/itens/balas/musigun-particle.png" id="3_eoqba"]
+[ext_resource type="Texture2D" uid="uid://cwjjejqkelk0h" path="res://assets/itens/balas/a_porra_do_nyan_cat.png" id="4_qncy5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y25gk"]
+atlas = ExtResource("2_y25gk")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tamys"]
+atlas = ExtResource("3_eoqba")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26lx3"]
+atlas = ExtResource("3_eoqba")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cfmv"]
+atlas = ExtResource("3_eoqba")
+region = Rect2(24, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k76ql"]
+atlas = ExtResource("4_qncy5")
+region = Rect2(0, 0, 45, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l5glv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y25gk")
+}],
+"loop": true,
+"name": &"melanGun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tamys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26lx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cfmv")
+}],
+"loop": true,
+"name": &"musicGun",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k76ql")
+}],
+"loop": true,
+"name": &"nyanGun",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lwbfk"]
 radius = 5.0
@@ -10,9 +65,10 @@ radius = 5.0
 collision_mask = 2
 script = ExtResource("1_u3q6b")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_qqge0")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l5glv")
+animation = &"nyanGun"
+autoplay = "melanGun"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_lwbfk")

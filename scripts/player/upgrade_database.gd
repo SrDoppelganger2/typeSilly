@@ -4,9 +4,9 @@ const ICON_PATH = "res://assets/itens/upgrades/";
 const GUNS_PATH = ""; #talvez não precise
 
 const UPGRADES ={
-	"melancia":{
-		"icon": ICON_PATH + "suika.png",
-		"displayName":"melancia",
+	"jujuba_peixe":{
+		"icon": ICON_PATH + "jujubinha_de_peixe.png",
+		"displayName":"jujuba de peixe",
 		"details":"cura 20% de vida",
 		"level":"Level: n/a",
 		"prerequisite":[], 
@@ -45,24 +45,24 @@ const UPGRADES ={
 		"type":"item"
 	},
 	"berserk1":{
-		"icon": ICON_PATH + "suika.png",
-		"displayName":"Berserk Pack",
+		"icon": ICON_PATH + "pump_do_calistenio.png",
+		"displayName":"Shake de Proteína",
 		"details":"aumenta o dano dos seus ataques",
 		"level":"Level: 1",
 		"prerequisite":[], 
 		"type":"item"
 	},
 	"berserk2":{
-		"icon": ICON_PATH + "suika.png",
-		"displayName":"Berserk Pack",
+		"icon": ICON_PATH + "pump_do_calistenio.png",
+		"displayName":"Shake de Proteína",
 		"details":"aumenta o dano dos seus ataques",
 		"level":"Level: 2",
 		"prerequisite":["berserk1"], 
 		"type":"item"
 	},
 	"berserk3":{
-		"icon": ICON_PATH + "suika.png",
-		"displayName":"Berserk Pack",
+		"icon": ICON_PATH + "pump_do_calistenio.png",
+		"displayName":"Shake de Proteína",
 		"details":"aumenta o dano dos seus ataques",
 		"level":"Level: 3",
 		"prerequisite":["berserk2"], 

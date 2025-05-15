@@ -54,7 +54,7 @@ func getHurt():
 func updateHealthBar():
 	%PlayerHealthBar.max_value = maxHealth;
 	%PlayerHealthBar.value = health;
-	%healthLabel.text = str(health,"/",maxHealth);
+	%healthLabel.text = str(clampi(health, 0, maxHealth),"/",maxHealth);
 
 func _physics_process(_delta):
 	setChosenWeapon.emit(gun);
@@ -188,7 +188,7 @@ func getRandomUpgrade():
 
 func applyUpgrade(upgrade):
 	match upgrade:
-		"melancia":
+		"jujuba_peixe":
 			health += 2
 			health = clamp(health, 0, maxHealth);
 			updateHealthBar();

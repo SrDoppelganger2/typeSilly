@@ -78,7 +78,7 @@ func _on_player_set_damage(dmg) -> void:
 func pistolLogic():
 	#instancia a cena bullet
 	var bulletInstance = bullet.instantiate();
-	bulletInstance.setDamage(damage)
+	bulletInstance.setDamage(damage);
 	#instancia bala no mundo para ela não mudar sua posição depois de atirada
 	get_tree().root.add_child(bulletInstance);
 	#faz a bala sair do ponto marcado na arma

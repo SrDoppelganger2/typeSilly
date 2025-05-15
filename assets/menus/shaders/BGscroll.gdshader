@@ -5,4 +5,3 @@ void vertex() {
 	//Adicionar quando tiver BG definitivo
 	//UV.y -= TIME * .1;
 }
-

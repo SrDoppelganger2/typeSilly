@@ -1,23 +1,29 @@
 extends Node2D
 
+@onready var sprite = $Sprite2D;
 const SPEED = 500.0;
 
 var bulletDamage = 1;
+var type;
 
-#var weapon = "shotgun";
-#
-#var spread = randf_range(-0.5,0.5)
-#var direction = transform.x.rotated(spread)
+
+func _ready():
+	type = GlobalScript.getWeapon();
+	
+	if type == "pistol":
+		sprite.play("melanGun");
+	elif type == "shotgun":
+		sprite.play("musicGun");
+	elif type == "chaingun":
+		sprite.play("nyanGun");
+	else:
+		sprite.play("melanGun");
 
 func setDamage(damage):
 	bulletDamage = damage;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#move a bala na direção que a arma está apontando
-	#if weapon == "shotgun":
-		#position += direction * SPEED * delta;
-	#else:
 		position += transform.x * SPEED * delta;
 
 #remove a bala quando ela sai da camera

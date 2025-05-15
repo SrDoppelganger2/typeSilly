@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bamydnuay403x"]
+[gd_scene load_steps=13 format=3 uid="uid://bamydnuay403x"]
 
 [ext_resource type="Script" uid="uid://dm0aq2e2danl7" path="res://scripts/gameScript.gd" id="1_c04gn"]
 [ext_resource type="PackedScene" uid="uid://bscfh0wybxa5r" path="res://scenes/player.tscn" id="1_ckh02"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/fontes/PixelOperator8.ttf" id="3_gubc5"]
 [ext_resource type="PackedScene" uid="uid://1esufacl1srn" path="res://scenes/Menus/game_over_screen.tscn" id="4_c16ls"]
 [ext_resource type="FontFile" uid="uid://dtwyw12fh2x1w" path="res://assets/fontes/PixelOperator8-Bold.ttf" id="4_rt2n2"]
+[ext_resource type="Texture2D" uid="uid://bmw1ieovw4l4x" path="res://assets/placeholder/placeholder_grass.png" id="6_c16ls"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wgrq"]
 bg_color = Color(0.309804, 0.282353, 0.278431, 1)
@@ -195,22 +196,15 @@ offset_bottom = -406.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="placeholderBG" type="CanvasLayer" parent="."]
-layer = -10
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="placeholderBG"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -13.0
-offset_right = 7.0
-offset_bottom = -13.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(0.85098, 0.929412, 0.572549, 1)
+[node name="ground" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1150, 640)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ground"]
+position = Vector2(575.375, 323.024)
+scale = Vector2(1.01521, 0.569622)
+texture = ExtResource("6_c16ls")
 
 [node name="ENM spawnrate" type="Timer" parent="."]
 process_mode = 1

@@ -1,7 +1,7 @@
 extends Control
 
 var weapon;
-var weaponPicked:bool = false
+var weaponPicked:bool = false;
 @onready var jogarButton = %Jogar;
 @onready var melancio = $melancio;
 @onready var janela = $janela;

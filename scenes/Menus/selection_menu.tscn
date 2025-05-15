@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bryud8od03ixl"]
+[gd_scene load_steps=15 format=3 uid="uid://bryud8od03ixl"]
 
 [ext_resource type="Texture2D" uid="uid://cmtrkkha7iq8l" path="res://assets/personagens/melancio4real.png" id="1_q0fhy"]
 [ext_resource type="Script" uid="uid://vxd6r0flw4td" path="res://scripts/selectionScript.gd" id="1_vk7ax"]
@@ -7,10 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://b8fi8sbqfl6ea" path="res://assets/placeholder/checkedBG.png" id="2_qekaa"]
 [ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/fontes/PixelOperator8.ttf" id="3_cao45"]
 [ext_resource type="ButtonGroup" uid="uid://k0f3115k3c88" path="res://scenes/Menus/weaponSelectGroup.tres" id="5_i324u"]
-[ext_resource type="Texture2D" uid="uid://dbw026s1cq5r7" path="res://assets/armas/pistola.png" id="6_i324u"]
-[ext_resource type="Texture2D" uid="uid://cr6vev8ijkw0h" path="res://assets/placeholder/gato_icon.png" id="6_qs7hx"]
-[ext_resource type="Texture2D" uid="uid://cvnsi7iwpnlkg" path="res://assets/armas/musigun.png" id="8_qekaa"]
-[ext_resource type="Texture2D" uid="uid://cs0ix28fxg845" path="res://assets/armas/nyangun.png" id="9_fcmd2"]
+[ext_resource type="Texture2D" uid="uid://bkr14naymeqqh" path="res://assets/placeholder/pistola_icon.png" id="8_swu15"]
+[ext_resource type="Texture2D" uid="uid://dnehqcp2lct4" path="res://assets/placeholder/pistola_select.png" id="9_bsw6c"]
+[ext_resource type="Texture2D" uid="uid://cb26yld6y8t31" path="res://assets/placeholder/shotgun_icon.png" id="10_bsw6c"]
+[ext_resource type="Texture2D" uid="uid://ct4b6j8l6mcng" path="res://assets/placeholder/shotgun_select.png" id="11_kxqu6"]
+[ext_resource type="Texture2D" uid="uid://d3hsuio2xe2qn" path="res://assets/placeholder/nyangun_icon.png" id="12_nmybn"]
+[ext_resource type="Texture2D" uid="uid://kqw62rfss0ip" path="res://assets/placeholder/nyangun_select.png" id="13_ot2bm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_swu15"]
 shader = ExtResource("2_fcmd2")
@@ -43,7 +45,7 @@ offset_bottom = 77.0
 theme_override_colors/font_color = Color(0.402382, 0.000111423, 0.402379, 1)
 theme_override_fonts/font = ExtResource("3_cao45")
 theme_override_font_sizes/font_size = 48
-text = "Escolha seu arquivo Bélico"
+text = "Escolha seu armiaumento"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -83,51 +85,50 @@ anchor_left = 0.046
 anchor_top = 0.169
 anchor_right = 0.046
 anchor_bottom = 0.169
-offset_left = 54.308
-offset_top = 13.879
-offset_right = 126.308
-offset_bottom = 85.879
-scale = Vector2(2, 2)
+offset_left = 13.308
+offset_top = 66.879
+offset_right = 154.308
+offset_bottom = 200.879
+scale = Vector2(1.2, 1.2)
 toggle_mode = true
 button_group = ExtResource("5_i324u")
-texture_normal = ExtResource("6_i324u")
-texture_pressed = ExtResource("6_qs7hx")
-stretch_mode = 5
+texture_normal = ExtResource("8_swu15")
+texture_pressed = ExtResource("9_bsw6c")
 
 [node name="shotgun" type="TextureButton" parent="janela"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.955
-anchor_top = 0.147
-anchor_right = 0.955
-anchor_bottom = 0.147
-offset_left = -277.91
-offset_top = -2.123
-offset_right = -174.91
-offset_bottom = 58.877
-scale = Vector2(2.5, 2.5)
+anchor_left = 0.493
+anchor_top = 0.953
+anchor_right = 0.493
+anchor_bottom = 0.953
+offset_left = -73.786
+offset_top = -244.777
+offset_right = 49.214
+offset_bottom = -129.777
+scale = Vector2(1.2, 1.2)
 toggle_mode = true
 button_group = ExtResource("5_i324u")
-texture_normal = ExtResource("8_qekaa")
-texture_pressed = ExtResource("6_qs7hx")
+texture_normal = ExtResource("10_bsw6c")
+texture_pressed = ExtResource("11_kxqu6")
 stretch_mode = 5
 
 [node name="chaingun" type="TextureButton" parent="janela"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.495
+anchor_left = 0.787
 anchor_top = 0.956
-anchor_right = 0.495
+anchor_right = 0.787
 anchor_bottom = 0.956
-offset_left = -116.99
-offset_top = -177.004
-offset_right = -29.99
-offset_bottom = -120.004
-scale = Vector2(2.5, 2.5)
+offset_left = -70.774
+offset_top = -250.004
+offset_right = 47.226
+offset_bottom = -133.004
+scale = Vector2(1.2, 1.2)
 toggle_mode = true
 button_group = ExtResource("5_i324u")
-texture_normal = ExtResource("9_fcmd2")
-texture_pressed = ExtResource("6_qs7hx")
+texture_normal = ExtResource("12_nmybn")
+texture_pressed = ExtResource("13_ot2bm")
 stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
