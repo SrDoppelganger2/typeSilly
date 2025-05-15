@@ -1,9 +1,11 @@
 extends Area2D
 
+signal pushEnemy;
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		body.getHurt();
+		pushEnemy.emit();
 
 func death():
 	Engine.time_scale = 0.5;

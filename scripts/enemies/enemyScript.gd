@@ -62,6 +62,10 @@ func _physics_process(delta):
 	
 	move_and_slide();
 
+#faz com que o inimigo não fique colado no jogador
+func _on_killzone_push_enemy() -> void:
+	global_position -= direction;
+
 func nectafiro():
 	sprites.play("nectafiro")
 	speed = 75.0;
