@@ -199,11 +199,11 @@ grow_vertical = 2
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ground" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(1150, 640)
+motion_mirroring = Vector2(1000, 720)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ground"]
-position = Vector2(575.375, 323.024)
-scale = Vector2(1.01521, 0.569622)
+position = Vector2(563, 363)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_c16ls")
 
 [node name="ENM spawnrate" type="Timer" parent="."]
