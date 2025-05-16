@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpiho40hfslg1"]
+[gd_scene load_steps=7 format=3 uid="uid://cpiho40hfslg1"]
 
 [ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/fontes/PixelOperator8.ttf" id="1_d6gkj"]
 [ext_resource type="Script" uid="uid://fa64rx5433jd" path="res://scripts/titleScript.gd" id="1_l144a"]
 [ext_resource type="Texture2D" uid="uid://bbmeixecjfqy3" path="res://assets/menus/background-melancio.png" id="2_p6dhs"]
+[ext_resource type="FontFile" uid="uid://dtwyw12fh2x1w" path="res://assets/fontes/PixelOperator8-Bold.ttf" id="4_b3w7a"]
+[ext_resource type="Theme" uid="uid://copo8862r7heo" path="res://assets/menus/menu_theme.tres" id="4_pyl7j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5a07x"]
+font = ExtResource("4_b3w7a")
 font_size = 64
+outline_size = 8
+outline_color = Color(0.82951, 0.000625507, 0.844901, 1)
 
 [node name="Title" type="Node2D"]
 script = ExtResource("1_l144a")
@@ -26,24 +31,26 @@ anchors_preset = -1
 anchor_left = 0.003
 anchor_right = 1.0
 offset_left = -0.456
-offset_top = 64.0
-offset_bottom = 32.0
+offset_top = 26.0
+offset_bottom = 90.0
 grow_horizontal = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.191283, 0.866452, 1)
 theme_override_fonts/font = ExtResource("1_d6gkj")
-text = "Type: Silly :3 "
+text = "Melâncio no Espaço"
 label_settings = SubResource("LabelSettings_5a07x")
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+texture_filter = 1
 anchors_preset = -1
-anchor_left = 0.667
+anchor_left = 0.656
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 118.616
-offset_top = -295.0
-offset_right = -89.0
+offset_left = 0.287964
+offset_top = -345.0
+offset_right = -19.0
 offset_bottom = -39.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -51,29 +58,52 @@ size_flags_vertical = 10
 size_flags_stretch_ratio = 0.5
 theme_override_constants/separation = 32
 
-[node name="Jogar" type="Button" parent="CanvasLayer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 64)
+[node name="Panel" type="Panel" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("4_pyl7j")
+
+[node name="Jogar" type="Button" parent="CanvasLayer/VBoxContainer/Panel"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+offset_left = 76.0
+offset_top = 38.0
+offset_right = 311.0
+offset_bottom = 102.0
+size_flags_vertical = 3
+theme = ExtResource("4_pyl7j")
 theme_override_fonts/font = ExtResource("1_d6gkj")
 theme_override_font_sizes/font_size = 32
 text = "Jogar"
 
-[node name="Opções" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="Opções" type="Button" parent="CanvasLayer/VBoxContainer/Panel"]
+texture_filter = 1
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+offset_left = 76.0
+offset_top = 134.0
+offset_right = 311.0
+offset_bottom = 198.0
+theme = ExtResource("4_pyl7j")
 theme_override_fonts/font = ExtResource("1_d6gkj")
 theme_override_font_sizes/font_size = 32
 text = "Opções"
 
-[node name="Sair" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="Sair" type="Button" parent="CanvasLayer/VBoxContainer/Panel"]
+texture_filter = 1
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+offset_left = 76.0
+offset_top = 230.0
+offset_right = 311.0
+offset_bottom = 294.0
 size_flags_vertical = 3
+theme = ExtResource("4_pyl7j")
 theme_override_fonts/font = ExtResource("1_d6gkj")
 theme_override_font_sizes/font_size = 32
 text = "Sair"
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Opções" to="." method="_on_config_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Panel/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Panel/Opções" to="." method="_on_config_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Panel/Sair" to="." method="_on_sair_pressed"]

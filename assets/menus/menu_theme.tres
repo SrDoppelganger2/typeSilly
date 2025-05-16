@@ -1,0 +1,37 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://copo8862r7heo"]
+
+[ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/fontes/PixelOperator8.ttf" id="1_vipyi"]
+[ext_resource type="Texture2D" uid="uid://ycmmgx0t8fc" path="res://assets/menus/button.png" id="2_3qkmq"]
+[ext_resource type="Texture2D" uid="uid://c2ne4261pre3k" path="res://assets/menus/winPanel.png" id="3_3qkmq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c8q1f"]
+texture = ExtResource("2_3qkmq")
+modulate_color = Color(0.590441, 0.590441, 0.590441, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_prx1q"]
+texture = ExtResource("2_3qkmq")
+modulate_color = Color(0.666569, 0.666569, 0.666569, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_snxo8"]
+texture = ExtResource("2_3qkmq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kx8jx"]
+texture = ExtResource("2_3qkmq")
+modulate_color = Color(0.568973, 0.568973, 0.568973, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dy3fh"]
+texture = ExtResource("3_3qkmq")
+
+[resource]
+default_font = ExtResource("1_vipyi")
+default_font_size = 16
+Button/colors/font_color = Color(0.0267215, 0.0267215, 0.0267215, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/fonts/font = ExtResource("1_vipyi")
+Button/styles/disabled = SubResource("StyleBoxTexture_c8q1f")
+Button/styles/hover = SubResource("StyleBoxTexture_prx1q")
+Button/styles/normal = SubResource("StyleBoxTexture_snxo8")
+Button/styles/pressed = SubResource("StyleBoxTexture_kx8jx")
+Panel/styles/panel = SubResource("StyleBoxTexture_dy3fh")
