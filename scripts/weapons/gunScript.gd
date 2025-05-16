@@ -17,6 +17,8 @@ var cooldown;
 
 #TODO procurar um jeito melhor de fazer isso
 var canFire = false;
+#quick fix para o bug do nyan cat ficar invertido
+var weaponFLipped = false;
 
 func _on_player_set_chosen_weapon(weapon) -> void:
 	if weapon == null:
@@ -53,8 +55,10 @@ func _process(_delta):
 	var weaponRotation = wrap(weaponSlot.rotation_degrees, 0, 360);
 	if weaponRotation > 90 and weaponRotation < 270:
 		scale.y = -1
+		weaponFLipped = true;
 	else:
 		scale.y = 1
+		weaponFLipped = false;
 		
 	#lida com a logica da bala
 	if Input.is_action_pressed("shoot") and canFire:
@@ -81,6 +85,7 @@ func pistolLogic():
 	bulletInstance.setDamage(damage);
 	#instancia bala no mundo para ela não mudar sua posição depois de atirada
 	get_tree().root.add_child(bulletInstance);
+	flipBulletSprite(bulletInstance);
 	#faz a bala sair do ponto marcado na arma
 	bulletInstance.global_position = bulletOrigin.global_position;
 	bulletInstance.rotation = global_rotation;
@@ -89,12 +94,13 @@ func _on_player_set_pellets(quantity) -> void:
 	pellets = quantity;
 
 func shotgunLogic():
-	var arc = 30.0;
+	var arc = 45.0;
 	damage = 3
 	%fireRate.set_wait_time(1.0);
 	
 	for i in pellets:
 		var bulletInstance = bullet.instantiate();
+		flipBulletSprite(bulletInstance);
 		bulletInstance.setDamage(damage)
 		get_tree().root.add_child(bulletInstance);
 		bulletInstance.global_position = bulletOrigin.global_position;
@@ -110,8 +116,15 @@ func chaingunLogic():
 	%fireRate.set_wait_time(0.1);
 	
 	var bulletInstance = bullet.instantiate();
+	flipBulletSprite(bulletInstance);
 	bulletInstance.setDamage(damage)
 	get_tree().root.add_child(bulletInstance);
 	bulletInstance.global_position = bulletOrigin.global_position;
 	bulletInstance.rotation = global_rotation;
 	
+#checa se precisa inverter o sprite da bala
+func flipBulletSprite(bullet):
+	if weaponFLipped:
+		bullet.scale.y = -1;
+	else:
+		return;
