@@ -1,9 +1,9 @@
-extends ColorRect
+extends TextureRect
 
 @onready var nameLabel = $nameLabel;
 @onready var descriptionLabel = $descriptionLabel;
 @onready var levelLabel = $levelLabel;
-@onready var icone = $iconBorder/iconTexture;
+@onready var icone = $iconTexture;
 
 var mouseHover = false;
 var upgrade = null; 

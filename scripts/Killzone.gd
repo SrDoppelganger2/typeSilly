@@ -1,5 +1,7 @@
 extends Area2D
 
+#jeito porco de concertar o bug
+var timerStarted = false;
 signal pushEnemy;
 
 func _on_body_entered(body):
@@ -9,7 +11,9 @@ func _on_body_entered(body):
 
 func death():
 	Engine.time_scale = 0.5;
-	$Timer.start();
+	if !timerStarted:
+		$Timer.start();
+		timerStarted = true;
 
 func _on_timer_timeout():
 	Engine.time_scale = 1.0;

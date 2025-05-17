@@ -91,7 +91,7 @@ func poligonhom():
 	sprites.play("poligonhom")
 	speed = 50.0;
 	health = 8;
-	exp = 1;
+	exp = 5;
 	
 	#ajusta a hitbox
 	hitbox.scale = Vector2(1.6,1.6)

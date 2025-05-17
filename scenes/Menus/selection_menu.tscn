@@ -122,15 +122,42 @@ anchor_top = 0.956
 anchor_right = 0.787
 anchor_bottom = 0.956
 offset_left = -70.774
-offset_top = -250.004
+offset_top = -246.004
 offset_right = 47.226
-offset_bottom = -133.004
+offset_bottom = -129.004
 scale = Vector2(1.2, 1.2)
 toggle_mode = true
 button_group = ExtResource("5_i324u")
 texture_normal = ExtResource("12_nmybn")
 texture_pressed = ExtResource("13_ot2bm")
 stretch_mode = 5
+
+[node name="Melangun" type="Label" parent="janela"]
+offset_left = 47.0
+offset_top = 280.0
+offset_right = 207.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_cao45")
+text = "Melangun.txt"
+
+[node name="Musigun" type="Label" parent="janela"]
+offset_left = 233.0
+offset_top = 280.0
+offset_right = 387.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_cao45")
+text = "Musigun.wav"
+
+[node name="Nyangun" type="Label" parent="janela"]
+offset_left = 405.0
+offset_top = 280.0
+offset_right = 555.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_cao45")
+text = "Nyangun.ogg"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2

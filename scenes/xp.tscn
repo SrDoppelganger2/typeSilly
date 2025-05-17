@@ -1,9 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://44cpvf26jp68"]
 
 [ext_resource type="Script" uid="uid://b8lri7q85yhj4" path="res://scripts/xp.gd" id="1_8cwu2"]
-[ext_resource type="Texture2D" uid="uid://ddv5iyyqu6l4q" path="res://assets/placeholder/xp.png" id="1_xi7dx"]
+[ext_resource type="Texture2D" uid="uid://3ekpa25lxmc4" path="res://assets/itens/xp.png" id="2_8cwu2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xi7dx"]
+radius = 11.0454
 
 [node name="XP" type="Area2D" groups=["coletavel"]]
 collision_layer = 8
@@ -12,8 +13,7 @@ script = ExtResource("1_8cwu2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
-scale = Vector2(0.0380859, 0.0380859)
-texture = ExtResource("1_xi7dx")
+texture = ExtResource("2_8cwu2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)

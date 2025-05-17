@@ -128,7 +128,7 @@ func levelUp():
 	#animação de mostra o menu de upgrades
 	LvUpPanel.show();
 	var panelAnimation = LvUpPanel.create_tween();
-	panelAnimation.tween_property(LvUpPanel,"position",Vector2(354,17),0.4).set_trans(panelAnimation.TRANS_QUINT).set_ease(panelAnimation.EASE_IN);
+	panelAnimation.tween_property(LvUpPanel,"position",Vector2(324,17),0.4).set_trans(panelAnimation.TRANS_QUINT).set_ease(panelAnimation.EASE_IN);
 	panelAnimation.play();
 	
 	var options = 0
@@ -168,7 +168,7 @@ func getRandomUpgrade():
 		#TODO fazer um método de filtragem mais eficiente
 		elif UpgradeDb.UPGRADES[i]["displayName"] == "destreza" and gun == "chaingun": 
 			pass
-		elif UpgradeDb.UPGRADES[i]["displayName"] == "mais balas" and gun != "shotgun":
+		elif UpgradeDb.UPGRADES[i]["displayName"] == "arquivo MP3" and gun != "shotgun":
 			pass
 		elif UpgradeDb.UPGRADES[i]["prerequisite"].size() > 0: #checa prerequisitos
 			for n in UpgradeDb.UPGRADES[i]["prerequisite"]:
