@@ -15,6 +15,10 @@ run/main_scene="res://scenes/title.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
 Killzone="*res://scenes/killzone.tscn"
@@ -23,7 +27,7 @@ GlobalScript="*res://scripts/globalScript.gd"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 
 [input]
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dg3jtg6ln2eeg"
+path="res://.godot/imported/placeholder_track.mp3-9c8926293604943b0b30daa5024e0d42.mp3str"
+
+[deps]
+
+source_file="res://assets/sons e musicas/placeholder_track.mp3"
+dest_files=["res://.godot/imported/placeholder_track.mp3-9c8926293604943b0b30daa5024e0d42.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
