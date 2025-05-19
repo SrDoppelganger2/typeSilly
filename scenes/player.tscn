@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bscfh0wybxa5r"]
+[gd_scene load_steps=15 format=3 uid="uid://bscfh0wybxa5r"]
 
 [ext_resource type="Script" uid="uid://dqq5b1apxykij" path="res://scripts/player/playerScript.gd" id="1_2eo5p"]
 [ext_resource type="Texture2D" uid="uid://dvu38cye7lku0" path="res://assets/personagens/melanciosheet.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://ck8yfidwi5kaw" path="res://assets/personagens/melanciosheetcommorte.png" id="3_dqkch"]
 [ext_resource type="PackedScene" uid="uid://bb1lh4apq28pi" path="res://scenes/pistol.tscn" id="3_r4j78"]
+[ext_resource type="AudioStream" uid="uid://dg4uah44y8nl2" path="res://assets/sons e musicas/meow_hurt (slow).mp3" id="5_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
 atlas = ExtResource("2_dqkch")
@@ -100,6 +101,15 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areas/collectArea"]
 shape = SubResource("CircleShape2D_qlg0r")
+
+[node name="sons" type="Node" parent="."]
+
+[node name="Death" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("5_qlg0r")
+volume_db = -5.0
+pitch_scale = 0.9
+bus = &"SFX"
+parameters/looping = false
 
 [connection signal="setChosenWeapon" from="." to="weaponSlot/pistol" method="_on_player_set_chosen_weapon"]
 [connection signal="setDamage" from="." to="weaponSlot/pistol" method="_on_player_set_damage"]

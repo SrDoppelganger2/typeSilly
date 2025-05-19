@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dv3qvhm38ebtx"
+path="res://.godot/imported/melancio inicio2.mp3-59ccf04cd1075b96ccfd5929cb2359ed.mp3str"
+
+[deps]
+
+source_file="res://assets/sons e musicas/melancio inicio2.mp3"
+dest_files=["res://.godot/imported/melancio inicio2.mp3-59ccf04cd1075b96ccfd5929cb2359ed.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

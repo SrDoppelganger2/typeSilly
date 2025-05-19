@@ -32,6 +32,9 @@ signal setDamage;
 signal setChosenWeapon;
 signal setPellets;
 
+#var de sons
+@onready var deathSound = $sons/Death
+
 func _ready():
 	isDead = false;
 	gun = GlobalScript.getWeapon();
@@ -51,6 +54,8 @@ func getHurt():
 	sprite.play("hurt");
 	#TODO adicionar animação de morte e tela de gameover para chamar aqui
 	if health <= 0:
+		AudioServer
+		deathSound.play();
 		Killzone.death();
 		isDead = true;
 
