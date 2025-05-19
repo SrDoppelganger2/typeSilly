@@ -1,5 +1,7 @@
 extends Control
 
+func _ready() -> void:
+	Soundtrack.playMusic("mainMenu");
 
 func _on_respawn_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Menus/selection_menu.tscn");

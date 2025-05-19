@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkbkx2rbm64l1"]
+
+[ext_resource type="Script" uid="uid://dihlttxme7i1u" path="res://scripts/soundtrack.gd" id="1_p7a7m"]
+[ext_resource type="AudioStream" uid="uid://bbfj4dlj742ry" path="res://assets/sons e musicas/PlaceholderMusic01.mp3" id="2_jgnpi"]
+[ext_resource type="AudioStream" uid="uid://csyhjjtpv63lt" path="res://assets/sons e musicas/PlaceholderMusic02.mp3" id="3_orf8r"]
+
+[node name="Musics" type="Node"]
+process_mode = 3
+script = ExtResource("1_p7a7m")
+
+[node name="mainMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jgnpi")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+
+[node name="action" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_orf8r")
+volume_db = -10.0
+bus = &"Music"

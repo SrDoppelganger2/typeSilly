@@ -8,7 +8,8 @@ var paused = false;
 @onready var player = get_tree().get_first_node_in_group("player");
 
 
-
+func _ready() -> void:
+	Soundtrack.playMusic("action");
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
