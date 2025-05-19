@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://bscfh0wybxa5r"]
+[gd_scene load_steps=17 format=3 uid="uid://bscfh0wybxa5r"]
 
 [ext_resource type="Script" uid="uid://dqq5b1apxykij" path="res://scripts/player/playerScript.gd" id="1_2eo5p"]
 [ext_resource type="Texture2D" uid="uid://dvu38cye7lku0" path="res://assets/personagens/melanciosheet.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://ck8yfidwi5kaw" path="res://assets/personagens/melanciosheetcommorte.png" id="3_dqkch"]
 [ext_resource type="PackedScene" uid="uid://bb1lh4apq28pi" path="res://scenes/pistol.tscn" id="3_r4j78"]
 [ext_resource type="AudioStream" uid="uid://dg4uah44y8nl2" path="res://assets/sons e musicas/meow_hurt (slow).mp3" id="5_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://dx6ycitrf6eju" path="res://assets/sons e musicas/meow_no.mp3" id="6_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://c85fxno67hv0u" path="res://assets/sons e musicas/meow.mp3" id="7_fjrip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
 atlas = ExtResource("2_dqkch")
@@ -109,7 +111,17 @@ stream = ExtResource("5_qlg0r")
 volume_db = -5.0
 pitch_scale = 0.9
 bus = &"SFX"
-parameters/looping = false
+
+[node name="Miau" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("6_tuyoq")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="Intro" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("7_fjrip")
+volume_db = -10.0
+pitch_scale = 1.2
+bus = &"SFX"
 
 [connection signal="setChosenWeapon" from="." to="weaponSlot/pistol" method="_on_player_set_chosen_weapon"]
 [connection signal="setDamage" from="." to="weaponSlot/pistol" method="_on_player_set_damage"]

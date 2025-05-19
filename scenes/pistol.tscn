@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb1lh4apq28pi"]
+[gd_scene load_steps=6 format=3 uid="uid://bb1lh4apq28pi"]
 
 [ext_resource type="Script" uid="uid://dbppn05k38qrt" path="res://scripts/weapons/gunScript.gd" id="1_rqwr5"]
 [ext_resource type="Texture2D" uid="uid://cs0ix28fxg845" path="res://assets/armas/nyangun.png" id="2_buff3"]
+[ext_resource type="AudioStream" uid="uid://bhnd5e6g0k5ic" path="res://assets/sons e musicas/Armas/dispara semente.mp3" id="3_1e3ry"]
+[ext_resource type="AudioStream" uid="uid://cj3y4upjb72ow" path="res://assets/sons e musicas/Armas/Arma piano curto.mp3" id="4_4hq71"]
+[ext_resource type="AudioStream" uid="uid://i4bbuljn5ppw" path="res://assets/sons e musicas/Armas/Arma nyan.mp3" id="5_88qyl"]
 
 [node name="pistol" type="Node2D"]
 script = ExtResource("1_rqwr5")
@@ -21,3 +24,20 @@ position = Vector2(14, -4)
 [node name="chaingunBarrel" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(16, -2)
+
+[node name="sons" type="Node" parent="."]
+
+[node name="semente" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("3_1e3ry")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="piano" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("4_4hq71")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="nyan" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("5_88qyl")
+volume_db = -5.0
+bus = &"SFX"

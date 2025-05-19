@@ -1,10 +1,11 @@
-[gd_scene load_steps=29 format=3 uid="uid://0u18o22suwfk"]
+[gd_scene load_steps=30 format=3 uid="uid://0u18o22suwfk"]
 
 [ext_resource type="Script" uid="uid://cjtcnonbjrffr" path="res://scripts/enemies/enemyScript.gd" id="1_hwukv"]
 [ext_resource type="Texture2D" uid="uid://b16uyaf7k1n8g" path="res://assets/personagens/nectafiro-Sheet.png" id="2_fffdf"]
 [ext_resource type="Texture2D" uid="uid://dvmdjufpabc68" path="res://assets/personagens/ligeirinho-Sheet.png" id="2_qkj55"]
 [ext_resource type="Texture2D" uid="uid://17s7gnuqqtl0" path="res://assets/personagens/poligonhom-Sheet.png" id="3_6v8lg"]
 [ext_resource type="PackedScene" uid="uid://bb54gkpeet7tf" path="res://scenes/killzone.tscn" id="3_na044"]
+[ext_resource type="AudioStream" uid="uid://cvsjhk3xybbd1" path="res://assets/sons e musicas/ENM_hurt.mp3" id="6_bktlh"]
 
 [sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_fffdf"]
 parameter_name = "Tint"
@@ -252,5 +253,9 @@ debug_color = Color(0.831373, 0.392157, 0.0705882, 0.490196)
 position = Vector2(5, 0)
 scale = Vector2(1.2, 1.6)
 shape = SubResource("RectangleShape2D_sy7xr")
+
+[node name="hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bktlh")
+bus = &"SFX"
 
 [connection signal="pushEnemy" from="Killzone" to="." method="_on_killzone_push_enemy"]

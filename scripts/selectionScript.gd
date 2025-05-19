@@ -6,6 +6,12 @@ var weaponPicked:bool = false;
 @onready var melancio = $melancio;
 @onready var janela = $janela;
 
+#var de audio
+@onready var melangun: AudioStreamPlayer = $sons/melangun
+@onready var musigun: AudioStreamPlayer = $sons/Musigun
+@onready var nyangun: AudioStreamPlayer = $sons/Nyangun
+
+
 func _ready() -> void:
 	melancioAnimation();
 	janelaAnimation();
@@ -27,22 +33,27 @@ func janelaAnimation():
 	panelAnimation.play();
 
 func _on_jogar_pressed() -> void:
+	Soundtrack.playEffect("accept");
 	get_tree().change_scene_to_file("res://scenes/main_scene.tscn");
 
 func _on_voltar_pressed() -> void:
+	Soundtrack.playEffect("denied");
 	get_tree().change_scene_to_file("res://scenes/title.tscn");
 
 func _on_pistol_toggled(toggled_on: bool) -> void:
 	if toggled_on:
+		melangun.play();
 		weaponPicked = true;
 		GlobalScript.setWeapon("pistol");
 
 func _on_shotgun_toggled(toggled_on: bool) -> void:
 	if toggled_on:
+		musigun.play();
 		weaponPicked = true;
 		GlobalScript.setWeapon("shotgun");
 
 func _on_chaingun_toggled(toggled_on: bool) -> void:
 	if toggled_on:
+		nyangun.play();
 		weaponPicked = true;
 		GlobalScript.setWeapon("chaingun");

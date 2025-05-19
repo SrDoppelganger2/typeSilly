@@ -15,10 +15,15 @@ var damage = 1;
 var cooldown;
 
 
-#TODO procurar um jeito melhor de fazer isso
 var canFire = false;
 #quick fix para o bug do nyan cat ficar invertido
 var weaponFLipped = false;
+
+#var de som
+@onready var somSemente: AudioStreamPlayer = $sons/semente
+@onready var somPiano: AudioStreamPlayer = $sons/piano
+@onready var somNyan: AudioStreamPlayer = $sons/nyan
+
 
 func _on_player_set_chosen_weapon(weapon) -> void:
 	if weapon == null:
@@ -80,6 +85,7 @@ func _on_player_set_damage(dmg) -> void:
 	damage = dmg;
 
 func pistolLogic():
+	somSemente.play();
 	#instancia a cena bullet
 	var bulletInstance = bullet.instantiate();
 	bulletInstance.setDamage(damage);
@@ -98,6 +104,8 @@ func shotgunLogic():
 	damage = 3
 	%fireRate.set_wait_time(1.0);
 	
+	somPiano.play();
+	
 	for i in pellets:
 		var bulletInstance = bullet.instantiate();
 		flipBulletSprite(bulletInstance);
@@ -114,6 +122,8 @@ func shotgunLogic():
 
 func chaingunLogic():
 	%fireRate.set_wait_time(0.1);
+	
+	somNyan.play();
 	
 	var bulletInstance = bullet.instantiate();
 	flipBulletSprite(bulletInstance);

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bryud8od03ixl"]
+[gd_scene load_steps=19 format=3 uid="uid://bryud8od03ixl"]
 
 [ext_resource type="Texture2D" uid="uid://cmtrkkha7iq8l" path="res://assets/personagens/melancio4real.png" id="1_q0fhy"]
 [ext_resource type="Script" uid="uid://vxd6r0flw4td" path="res://scripts/selectionScript.gd" id="1_vk7ax"]
@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://d3hsuio2xe2qn" path="res://assets/placeholder/nyangun_icon.png" id="12_nmybn"]
 [ext_resource type="Texture2D" uid="uid://kqw62rfss0ip" path="res://assets/placeholder/nyangun_select.png" id="13_ot2bm"]
 [ext_resource type="Theme" uid="uid://copo8862r7heo" path="res://assets/menus/menu_theme.tres" id="14_kxqu6"]
+[ext_resource type="AudioStream" uid="uid://bhnd5e6g0k5ic" path="res://assets/sons e musicas/Armas/dispara semente.mp3" id="15_ot2bm"]
+[ext_resource type="AudioStream" uid="uid://cj3y4upjb72ow" path="res://assets/sons e musicas/Armas/Arma piano curto.mp3" id="16_r5n01"]
+[ext_resource type="AudioStream" uid="uid://i4bbuljn5ppw" path="res://assets/sons e musicas/Armas/Arma nyan.mp3" id="17_r5n01"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_swu15"]
 shader = ExtResource("2_fcmd2")
@@ -194,6 +197,20 @@ theme_override_fonts/font = ExtResource("3_cao45")
 theme_override_font_sizes/font_size = 40
 text = "Voltar
 "
+
+[node name="sons" type="Node" parent="."]
+
+[node name="melangun" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("15_ot2bm")
+bus = &"SFX"
+
+[node name="Musigun" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("16_r5n01")
+bus = &"SFX"
+
+[node name="Nyangun" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("17_r5n01")
+bus = &"SFX"
 
 [connection signal="toggled" from="janela/pistol" to="." method="_on_pistol_toggled"]
 [connection signal="toggled" from="janela/shotgun" to="." method="_on_shotgun_toggled"]

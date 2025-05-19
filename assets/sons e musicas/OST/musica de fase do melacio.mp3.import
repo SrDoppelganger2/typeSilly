@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7ie3exwomeca"
+path="res://.godot/imported/musica de fase do melacio.mp3-20d299bf19a77b9e724ee6bd3d1ba00b.mp3str"
+
+[deps]
+
+source_file="res://assets/sons e musicas/OST/musica de fase do melacio.mp3"
+dest_files=["res://.godot/imported/musica de fase do melacio.mp3-20d299bf19a77b9e724ee6bd3d1ba00b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

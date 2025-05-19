@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bmsw2dftklqam"
+path="res://.godot/imported/Arma piano.mp3-7ded02950df7a40f576da1d88eaa5899.mp3str"
+
+[deps]
+
+source_file="res://assets/sons e musicas/Armas/Arma piano.mp3"
+dest_files=["res://.godot/imported/Arma piano.mp3-7ded02950df7a40f576da1d88eaa5899.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

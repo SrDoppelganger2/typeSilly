@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dct66taybvep"]
+
+[ext_resource type="VideoStream" uid="uid://ehaaj3drfcw4" path="res://assets/prologo.ogv" id="1_q4sda"]
+
+[node name="prologo" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+stream = ExtResource("1_q4sda")
+autoplay = true
+expand = true

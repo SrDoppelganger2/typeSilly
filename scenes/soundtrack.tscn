@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkbkx2rbm64l1"]
+[gd_scene load_steps=6 format=3 uid="uid://bkbkx2rbm64l1"]
 
 [ext_resource type="Script" uid="uid://dihlttxme7i1u" path="res://scripts/soundtrack.gd" id="1_p7a7m"]
-[ext_resource type="AudioStream" uid="uid://dv3qvhm38ebtx" path="res://assets/sons e musicas/melancio inicio2.mp3" id="2_p7a7m"]
-[ext_resource type="AudioStream" uid="uid://b7ie3exwomeca" path="res://assets/sons e musicas/musica de fase do melacio.mp3" id="3_p7a7m"]
+[ext_resource type="AudioStream" uid="uid://dv3qvhm38ebtx" path="res://assets/sons e musicas/OST/melancio inicio2.mp3" id="2_p7a7m"]
+[ext_resource type="AudioStream" uid="uid://b7ie3exwomeca" path="res://assets/sons e musicas/OST/musica de fase do melacio.mp3" id="3_p7a7m"]
+[ext_resource type="AudioStream" uid="uid://2pev1pan51ae" path="res://assets/sons e musicas/accept.mp3" id="4_orf8r"]
+[ext_resource type="AudioStream" uid="uid://dvw6cvqevxyit" path="res://assets/sons e musicas/denied.mp3" id="5_ugpcd"]
 
 [node name="Musics" type="Node"]
 process_mode = 3
@@ -20,3 +22,13 @@ stream = ExtResource("3_p7a7m")
 volume_db = -10.0
 bus = &"Music"
 parameters/looping = true
+
+[node name="accept" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_orf8r")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="denied" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ugpcd")
+volume_db = -5.0
+bus = &"SFX"

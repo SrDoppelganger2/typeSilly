@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cj3y4upjb72ow"
+path="res://.godot/imported/Arma piano curto.mp3-d02b3192b779638c3d1d00096366d14a.mp3str"
+
+[deps]
+
+source_file="res://assets/sons e musicas/Armas/Arma piano curto.mp3"
+dest_files=["res://.godot/imported/Arma piano curto.mp3-d02b3192b779638c3d1d00096366d14a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

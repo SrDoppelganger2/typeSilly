@@ -25,6 +25,7 @@ func _ready() -> void:
 	loadAudio(configAudio);
 
 func _on_button_pressed():
+	Soundtrack.playEffect("denied");
 	get_tree().change_scene_to_file("res://scenes/title.tscn");
 
 #configurações de audio

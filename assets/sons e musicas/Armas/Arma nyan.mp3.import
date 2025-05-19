@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://i4bbuljn5ppw"
+path="res://.godot/imported/Arma nyan.mp3-f20b2ab9b94a4f407273d247b3b7cf8a.mp3str"
+
+[deps]
+
+source_file="res://assets/sons e musicas/Armas/Arma nyan.mp3"
+dest_files=["res://.godot/imported/Arma nyan.mp3-f20b2ab9b94a4f407273d247b3b7cf8a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -3,6 +3,10 @@ extends Node
 @onready var mainMenu = $mainMenu;
 @onready var action = $action;
 
+@onready var accept: AudioStreamPlayer = $accept
+@onready var denied: AudioStreamPlayer = $denied
+
+
 func playMusic(track):
 	match track:
 		"mainMenu":
@@ -13,4 +17,12 @@ func playMusic(track):
 			action.playing = true;
 		_:
 			mainMenu.playing = true;
-		
+
+func playEffect(track):
+	match track:
+		"accept":
+			accept.play();
+		"denied":
+			denied.play();
+		_:
+			accept.play();

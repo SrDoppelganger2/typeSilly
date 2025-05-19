@@ -34,6 +34,8 @@ signal setPellets;
 
 #var de sons
 @onready var deathSound = $sons/Death
+@onready var miau: AudioStreamPlayer = $sons/Miau
+@onready var intro: AudioStreamPlayer = $sons/Intro
 
 func _ready():
 	isDead = false;
@@ -41,6 +43,10 @@ func _ready():
 	sprite.play("default");
 	setExpBar(exp, calculateRequiredXP());
 	setChosenWeapon.emit(gun);
+	
+	#faz efeitos ficarem normal e toca som assim que entra em cena
+	intro.play();
+	AudioServer.set_bus_effect_enabled(2,0,false);
 
 #resolve o problema de diagonal ser mais rápida
 func getInput():
@@ -54,7 +60,7 @@ func getHurt():
 	sprite.play("hurt");
 	#TODO adicionar animação de morte e tela de gameover para chamar aqui
 	if health <= 0:
-		AudioServer
+		AudioServer.set_bus_effect_enabled(2,0,true);
 		deathSound.play();
 		Killzone.death();
 		isDead = true;
@@ -68,6 +74,9 @@ func _physics_process(_delta):
 	setChosenWeapon.emit(gun);
 	var direction = getInput();
 	velocity = direction * (SPEED + speedUpgrade);
+	
+	if Input.is_action_just_pressed("miar"):
+		miau.play();
 	
 	move_and_slide();
 
@@ -138,6 +147,7 @@ func levelUp():
 	LvLabel.text = str("Level: ",exp_level);
 	#animação de mostra o menu de upgrades
 	LvUpPanel.show();
+	Soundtrack.playEffect("accept");
 	var panelAnimation = LvUpPanel.create_tween();
 	panelAnimation.tween_property(LvUpPanel,"position",Vector2(324,17),0.4).set_trans(panelAnimation.TRANS_QUINT).set_ease(panelAnimation.EASE_IN);
 	panelAnimation.play();

@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var exp_base = get_tree().get_first_node_in_group("coletavel");
 @onready var exp_orb = preload("res://scenes/xp.tscn");
 @onready var sprites = $Sprite2D;
+@onready var deathSound: AudioStreamPlayer = $hurt
+
 
 var direction;
 var type;
