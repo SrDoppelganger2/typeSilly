@@ -2,6 +2,8 @@ extends Node
 
 var chosenWeapon;
 
+signal loadConfig;
+
 func setWeapon(weapon):
 	chosenWeapon = weapon;
 
