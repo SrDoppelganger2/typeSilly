@@ -17,5 +17,6 @@ func death():
 
 func _on_timer_timeout():
 	Engine.time_scale = 1.0;
+	timerStarted = false;
 	get_tree().change_scene_to_file("res://scenes/Menus/game_over_screen.tscn");
 	

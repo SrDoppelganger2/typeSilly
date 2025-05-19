@@ -54,7 +54,7 @@ text = "Configurações.exe"
 label_settings = SubResource("LabelSettings_um220")
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="Settings" type="VBoxContainer" parent="CanvasLayer"]
 custom_minimum_size = Vector2(0, 64)
 anchors_preset = -1
 anchor_top = 0.19
@@ -68,7 +68,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 9
 
-[node name="configAudio" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="configAudio" type="Label" parent="CanvasLayer/Settings"]
 layout_mode = 2
 theme = ExtResource("4_2xag0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -76,21 +76,21 @@ theme_override_fonts/font = ExtResource("4_h0gje")
 theme_override_font_sizes/font_size = 24
 text = "Áudio"
 
-[node name="geral" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="geral" type="Label" parent="CanvasLayer/Settings"]
 layout_mode = 2
 theme = ExtResource("4_2xag0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2iy26")
 text = "Geral"
 
-[node name="volMaster" type="HSlider" parent="CanvasLayer/VBoxContainer"]
+[node name="volMaster" type="HSlider" parent="CanvasLayer/Settings"]
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="mutarMaster" type="CheckBox" parent="CanvasLayer/VBoxContainer"]
+[node name="mutarMaster" type="CheckBox" parent="CanvasLayer/Settings"]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -102,19 +102,19 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2iy26")
 text = "Mutar"
 
-[node name="musica" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="musica" type="Label" parent="CanvasLayer/Settings"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2iy26")
 text = "Música"
 
-[node name="volMusica" type="HSlider" parent="CanvasLayer/VBoxContainer"]
+[node name="volMusica" type="HSlider" parent="CanvasLayer/Settings"]
 layout_mode = 2
 max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="mutarMusica" type="CheckBox" parent="CanvasLayer/VBoxContainer"]
+[node name="mutarMusica" type="CheckBox" parent="CanvasLayer/Settings"]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -126,7 +126,33 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2iy26")
 text = "Mutar"
 
-[node name="voltarBtn" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="volSFX" type="HSlider" parent="CanvasLayer/Settings"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="mutarSFX" type="CheckBox" parent="CanvasLayer/Settings"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2iy26")
+text = "Mutar"
+
+[node name="Buttons" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 93.0
+offset_top = 567.0
+offset_right = 1055.0
+offset_bottom = 631.0
+theme_override_constants/separation = 28
+alignment = 1
+
+[node name="voltarBtn" type="Button" parent="CanvasLayer/Buttons"]
 custom_minimum_size = Vector2(200, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -137,8 +163,13 @@ theme_override_font_sizes/font_size = 32
 text = "Voltar
 "
 
-[connection signal="value_changed" from="CanvasLayer/VBoxContainer/volMaster" to="." method="_on_masterVolume_value_changed"]
-[connection signal="toggled" from="CanvasLayer/VBoxContainer/mutarMaster" to="." method="_on_mutar_master_toggled"]
-[connection signal="value_changed" from="CanvasLayer/VBoxContainer/volMusica" to="." method="_on_musicVolume_value_changed"]
-[connection signal="toggled" from="CanvasLayer/VBoxContainer/mutarMusica" to="." method="_on_mutar_musica_toggled"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/voltarBtn" to="." method="_on_button_pressed"]
+[connection signal="drag_ended" from="CanvasLayer/Settings/volMaster" to="." method="_on_vol_master_drag_ended"]
+[connection signal="value_changed" from="CanvasLayer/Settings/volMaster" to="." method="_on_masterVolume_value_changed"]
+[connection signal="toggled" from="CanvasLayer/Settings/mutarMaster" to="." method="_on_mutar_master_toggled"]
+[connection signal="drag_ended" from="CanvasLayer/Settings/volMusica" to="." method="_on_vol_musica_drag_ended"]
+[connection signal="value_changed" from="CanvasLayer/Settings/volMusica" to="." method="_on_musicVolume_value_changed"]
+[connection signal="toggled" from="CanvasLayer/Settings/mutarMusica" to="." method="_on_mutar_musica_toggled"]
+[connection signal="drag_ended" from="CanvasLayer/Settings/volSFX" to="." method="_on_vol_sfx_drag_ended"]
+[connection signal="value_changed" from="CanvasLayer/Settings/volSFX" to="." method="_on_vol_sfx_value_changed"]
+[connection signal="toggled" from="CanvasLayer/Settings/mutarSFX" to="." method="_on_mutar_sfx_toggled"]
+[connection signal="pressed" from="CanvasLayer/Buttons/voltarBtn" to="." method="_on_button_pressed"]

@@ -17,4 +17,3 @@ bus = &"Music"
 [node name="action" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_orf8r")
 volume_db = -10.0
-bus = &"Music"
