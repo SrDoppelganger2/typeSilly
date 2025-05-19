@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://copo8862r7heo"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://copo8862r7heo"]
 
 [ext_resource type="FontFile" uid="uid://cvju6lacno8fe" path="res://assets/fontes/PixelOperator8.ttf" id="1_vipyi"]
 [ext_resource type="Texture2D" uid="uid://ycmmgx0t8fc" path="res://assets/menus/button.png" id="2_3qkmq"]
@@ -19,6 +19,29 @@ texture = ExtResource("2_3qkmq")
 texture = ExtResource("2_3qkmq")
 modulate_color = Color(0.568973, 0.568973, 0.568973, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qkmq"]
+bg_color = Color(0.313726, 0.309804, 0.92549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prx1q"]
+bg_color = Color(0.313726, 0.309804, 0.92549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8q1f"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.654902, 0.576471, 0.996078, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dy3fh"]
 texture = ExtResource("3_3qkmq")
 
@@ -34,4 +57,7 @@ Button/styles/disabled = SubResource("StyleBoxTexture_c8q1f")
 Button/styles/hover = SubResource("StyleBoxTexture_prx1q")
 Button/styles/normal = SubResource("StyleBoxTexture_snxo8")
 Button/styles/pressed = SubResource("StyleBoxTexture_kx8jx")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_3qkmq")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_prx1q")
+HSlider/styles/slider = SubResource("StyleBoxFlat_c8q1f")
 Panel/styles/panel = SubResource("StyleBoxTexture_dy3fh")

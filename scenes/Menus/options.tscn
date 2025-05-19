@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ce67gdep4sgck"]
+[gd_scene load_steps=12 format=3 uid="uid://ce67gdep4sgck"]
 
 [ext_resource type="Script" uid="uid://cv0sf50tea5j2" path="res://scripts/options.gd" id="1_wirlt"]
 [ext_resource type="Texture2D" uid="uid://bpj4tmg3ffrgo" path="res://assets/menus/blue_bg.jpg" id="2_2xag0"]
@@ -12,6 +12,29 @@ shader = ExtResource("2_oqtvb")
 
 [sub_resource type="LabelSettings" id="LabelSettings_um220"]
 font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqtvb"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.654902, 0.576471, 0.996078, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0gmyx"]
+bg_color = Color(0.313726, 0.309804, 0.92549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8jol"]
+bg_color = Color(0.313726, 0.309804, 0.92549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="options" type="Node2D"]
 script = ExtResource("1_wirlt")
@@ -50,7 +73,7 @@ offset_bottom = 55.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_2iy26")
 theme_override_font_sizes/font_size = 32
-text = "Configurações.exe"
+text = "Configurações.ini"
 label_settings = SubResource("LabelSettings_um220")
 vertical_alignment = 1
 
@@ -86,6 +109,10 @@ text = "Geral"
 [node name="volMaster" type="HSlider" parent="CanvasLayer/Settings"]
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
+theme = ExtResource("4_2xag0")
+theme_override_styles/slider = SubResource("StyleBoxFlat_oqtvb")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_0gmyx")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_g8jol")
 max_value = 1.0
 step = 0.05
 value = 1.0
@@ -110,6 +137,7 @@ text = "Música"
 
 [node name="volMusica" type="HSlider" parent="CanvasLayer/Settings"]
 layout_mode = 2
+theme = ExtResource("4_2xag0")
 max_value = 1.0
 step = 0.05
 value = 1.0
@@ -126,8 +154,15 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2iy26")
 text = "Mutar"
 
+[node name="efeitos_sonoros" type="Label" parent="CanvasLayer/Settings"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2iy26")
+text = "Efeitos Sonoros"
+
 [node name="volSFX" type="HSlider" parent="CanvasLayer/Settings"]
 layout_mode = 2
+theme = ExtResource("4_2xag0")
 max_value = 1.0
 step = 0.05
 value = 1.0

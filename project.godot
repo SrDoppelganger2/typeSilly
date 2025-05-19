@@ -26,6 +26,7 @@ UpgradeDb="*res://scenes/upgrade_db.tscn"
 GlobalScript="*res://scripts/globalScript.gd"
 Soundtrack="*res://scenes/soundtrack.tscn"
 ConfigHandler="*res://scripts/configHandler.gd"
+Options="*res://scenes/Menus/options.tscn"
 
 [display]
 

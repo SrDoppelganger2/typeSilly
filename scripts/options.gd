@@ -66,4 +66,8 @@ func loadAudio(configAudio):
 	mutar_musica.button_pressed = configAudio.music_muted;
 	mutar_sfx.button_pressed = configAudio.sfx_muted;
 	
+	masterVolumeSlider.value = min(configAudio.master_volume, 1.0);
+	musicVolumeSlider.value = min(configAudio.music_volume, 1.0);
+	sfxVolumeSlider.value = min(configAudio.sfx_volume, 1.0);
+	
 	
