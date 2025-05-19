@@ -19,13 +19,10 @@ extends Node2D
 
 
 #carrega as configurações salvas
-#TODO caso fique muito ilegível, fazer funções de carregamento para cada seção
 func _ready() -> void:
 	var configAudio = ConfigHandler.loadAudioSettings();
 	
-	mutar_master.button_pressed = configAudio.master_muted;
-	mutar_musica.button_pressed = configAudio.music_muted;
-	mutar_sfx.button_pressed = configAudio.sfx_muted;
+	loadAudio(configAudio);
 
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/title.tscn");
@@ -60,3 +57,13 @@ func _on_vol_sfx_drag_ended(value_changed: bool) -> void:
 func _on_mutar_sfx_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(sfxBus,toggled_on);
 	ConfigHandler.saveAudioSettings("sfx_muted", toggled_on);
+
+
+
+#carrega configurações
+func loadAudio(configAudio):
+	mutar_master.button_pressed = configAudio.master_muted;
+	mutar_musica.button_pressed = configAudio.music_muted;
+	mutar_sfx.button_pressed = configAudio.sfx_muted;
+	
+	
