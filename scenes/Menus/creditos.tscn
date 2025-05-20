@@ -19,6 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_wtnxi")
 
 [node name="background" type="TextureRect" parent="."]
+modulate = Color(0.891632, 0.000634748, 0.891626, 1)
 texture_repeat = 2
 material = SubResource("ShaderMaterial_rtx0x")
 layout_mode = 1
@@ -105,7 +106,7 @@ layout_mode = 2
 theme = ExtResource("3_rtx0x")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "A gata de bell"
+text = "Margarethe(gatinha) :3"
 
 [node name="voltar" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 64)
