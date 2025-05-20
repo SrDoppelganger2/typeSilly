@@ -1,0 +1,128 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjpeod6gf1yjy"]
+
+[ext_resource type="Texture2D" uid="uid://bpj4tmg3ffrgo" path="res://assets/menus/blue_bg.jpg" id="1_coi6f"]
+[ext_resource type="Shader" uid="uid://ibiyepxhcm24" path="res://assets/menus/shaders/VerticalBGscroll.gdshader" id="1_mhriu"]
+[ext_resource type="Script" uid="uid://btmm75emeduka" path="res://scripts/creditos.gd" id="1_wtnxi"]
+[ext_resource type="Theme" uid="uid://copo8862r7heo" path="res://assets/menus/menu_theme.tres" id="3_rtx0x"]
+[ext_resource type="FontFile" uid="uid://dtwyw12fh2x1w" path="res://assets/fontes/PixelOperator8-Bold.ttf" id="4_7dcvt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rtx0x"]
+shader = ExtResource("1_mhriu")
+
+[node name="Creditos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wtnxi")
+
+[node name="background" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_rtx0x")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_coi6f")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 158.0
+offset_right = 1028.0
+offset_bottom = 655.0
+theme = ExtResource("3_rtx0x")
+
+[node name="creditos" type="Label" parent="."]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 14.0
+offset_right = 490.0
+offset_bottom = 46.0
+theme = ExtResource("3_rtx0x")
+theme_override_font_sizes/font_size = 32
+text = "Creditos.txt"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 75.0
+offset_right = 996.0
+offset_bottom = 512.0
+theme_override_constants/separation = 19
+
+[node name="Shellcat" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_rtx0x")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_7dcvt")
+theme_override_font_sizes/font_size = 32
+text = "Shellcat Studio"
+
+[node name="membrosShellcat" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_rtx0x")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Sr.Doppelganger
+Sigil Chip
+Dancing Bell
+"
+
+[node name="creditos2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_rtx0x")
+theme_override_colors/font_color = Color(0.178604, 0.410124, 1, 1)
+theme_override_fonts/font = ExtResource("4_7dcvt")
+theme_override_font_sizes/font_size = 32
+text = "Recursos"
+
+[node name="membros2" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("3_rtx0x")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "icones windows:https://archive.org/
+icones UI:mounirtohami.itch.io
+backgrounds xadrez:www.vecteezy.com"
+autowrap_mode = 3
+
+[node name="Agradecimentos" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_rtx0x")
+theme_override_colors/font_color = Color(0.929966, 0.000776253, 0.941594, 1)
+theme_override_fonts/font = ExtResource("4_7dcvt")
+theme_override_font_sizes/font_size = 32
+text = "Agradeciementos especiais"
+
+[node name="membros3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_rtx0x")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "A gata de bell"
+
+[node name="voltar" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 64)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -84.0
+offset_right = 100.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_rtx0x")
+theme_override_font_sizes/font_size = 32
+text = "Voltar"
+
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]

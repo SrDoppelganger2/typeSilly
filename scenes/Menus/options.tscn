@@ -198,6 +198,12 @@ theme_override_font_sizes/font_size = 32
 text = "Voltar
 "
 
+[node name="Creditos" type="Button" parent="CanvasLayer/Buttons"]
+layout_mode = 2
+theme = ExtResource("4_2xag0")
+theme_override_font_sizes/font_size = 32
+text = "Créditos"
+
 [connection signal="drag_ended" from="CanvasLayer/Settings/volMaster" to="." method="_on_vol_master_drag_ended"]
 [connection signal="value_changed" from="CanvasLayer/Settings/volMaster" to="." method="_on_masterVolume_value_changed"]
 [connection signal="toggled" from="CanvasLayer/Settings/mutarMaster" to="." method="_on_mutar_master_toggled"]
@@ -208,3 +214,4 @@ text = "Voltar
 [connection signal="value_changed" from="CanvasLayer/Settings/volSFX" to="." method="_on_vol_sfx_value_changed"]
 [connection signal="toggled" from="CanvasLayer/Settings/mutarSFX" to="." method="_on_mutar_sfx_toggled"]
 [connection signal="pressed" from="CanvasLayer/Buttons/voltarBtn" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Creditos" to="." method="_on_creditos_pressed"]

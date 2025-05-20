@@ -28,6 +28,10 @@ func _on_button_pressed():
 	Soundtrack.playEffect("denied");
 	get_tree().change_scene_to_file("res://scenes/title.tscn");
 
+func _on_creditos_pressed() -> void:
+	Soundtrack.playEffect("accept");
+	get_tree().change_scene_to_file("res://scenes/Menus/creditos.tscn");
+
 #configurações de audio
 func _on_masterVolume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(masterBus,linear_to_db(value));
