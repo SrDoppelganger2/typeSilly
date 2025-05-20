@@ -11,9 +11,13 @@ extends Node
 func playMusic(track):
 	match track:
 		"mainMenu":
+			if mainMenu.playing:
+				return;
 			action.playing = false;
 			mainMenu.playing = true;
 		"action":
+			if action.playing:
+				return;
 			mainMenu.playing = false;
 			action.playing = true;
 		_:

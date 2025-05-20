@@ -17,21 +17,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_43erg")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="BAckground" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 5.0
-offset_right = 1146.0
+offset_top = -3.0
+offset_right = 1153.0
 offset_bottom = 646.0
 texture = ExtResource("2_7m1ea")
 expand_mode = 1
 
 [node name="GameOver" type="Label" parent="."]
 layout_mode = 2
-offset_left = 221.0
-offset_top = 42.0
-offset_right = 911.0
-offset_bottom = 122.0
+offset_left = 240.0
+offset_top = -68.0
+offset_right = 930.0
+offset_bottom = 12.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_outline_color = Color(0.831373, 0, 0.843137, 1)
@@ -43,11 +43,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="speech_bubble" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 326.0
-offset_top = 277.0
-offset_right = 975.0
-offset_bottom = 618.0
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.283
+anchor_top = 0.427
+anchor_right = 0.846
+anchor_bottom = 1.0
+offset_left = -0.0160217
+offset_top = 0.303986
+offset_right = 0.407959
+offset_bottom = -30.0
 texture = ExtResource("7_df3yr")
 flip_h = true
 flip_v = true
@@ -66,27 +72,27 @@ offset_bottom = 0.143005
 theme = ExtResource("4_5j8kv")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "Mandou miau..."
+text = "Miau... :<"
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="speech_bubble"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -105.0
-offset_top = -212.0
-offset_right = 295.0
-offset_bottom = -80.0
+offset_left = -179.5
+offset_top = -182.0
+offset_right = 220.5
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="speech_bubble/MarginContainer"]
 layout_mode = 2
 alignment = 2
 
-[node name="respawn" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="respawn" type="Button" parent="speech_bubble/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(400, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -96,7 +102,7 @@ theme_override_fonts/font = ExtResource("2_wxpmx")
 theme_override_font_sizes/font_size = 32
 text = "Jogar de Novo"
 
-[node name="Menu Principal" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Menu Principal" type="Button" parent="speech_bubble/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(400, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -108,9 +114,9 @@ text = "Menu Principal"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.32549, 1, 0.239216, 1)
-position = Vector2(192, 506)
+position = Vector2(-65, 504)
 scale = Vector2(2, 2)
 texture = ExtResource("6_m4awa")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/respawn" to="." method="_on_respawn_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu Principal" to="." method="_on_menu_principal_pressed"]
+[connection signal="pressed" from="speech_bubble/MarginContainer/VBoxContainer/respawn" to="." method="_on_respawn_pressed"]
+[connection signal="pressed" from="speech_bubble/MarginContainer/VBoxContainer/Menu Principal" to="." method="_on_menu_principal_pressed"]

@@ -60,10 +60,13 @@ func getHurt():
 	sprite.play("hurt");
 	#TODO adicionar animação de morte e tela de gameover para chamar aqui
 	if health <= 0:
-		AudioServer.set_bus_effect_enabled(2,0,true);
-		deathSound.play();
+		#garante que o efeito só toca uma vez
+		if !isDead:
+			AudioServer.set_bus_effect_enabled(2,0,true);
+			deathSound.play();
 		Killzone.death();
 		isDead = true;
+
 
 func updateHealthBar():
 	%PlayerHealthBar.max_value = maxHealth;
